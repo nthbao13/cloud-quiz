@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Home Screen -->
+        <div id="homeScreen" class="screen active">
+            <div class="header">
+                <button class="settings-btn" id="settingsBtn" title="Cấu hình API Key">⚙️</button>
+                <h1>Cloud Quiz</h1>
+                <p class="subtitle">Kiểm tra kiến thức của bạn</p>
+                
+                <div class="random-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="randomToggle" />
+                        <span class="toggle-text">🎲 Random câu hỏi</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-selector">
+                <div id="quizList" class="quiz-list"></div>
+                <button class="btn btn-primary" id="allQuizzesBtn">Làm tất cả Quiz</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-header">
+                <button class="btn-back" id="backBtn">← Quay lại</button>
+                <div class="quiz-progress">
+                    <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <h2 id="quizTitle"></h2>
+                <div class="question-card">
+                    <p id="questionText" class="question-text"></p>
+                    <div id="answersContainer" class="answers-container"></div>
+                </div>
+
+                <div id="explanationCard" class="explanation-card hidden">
+                    <div class="explanation-header">
+                        <span id="resultLabel" class="result-label"></span>
+                    </div>
+                    <div id="explanationText" class="explanation-text"></div>
+                </div>
+
+                <div class="quiz-actions">
+                    <button class="btn btn-primary" id="submitBtn">Xác nhận</button>
+                    <button class="btn btn-primary hidden" id="nextBtn">Câu tiếp theo</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="resultScreen" class="screen">
+            <div class="result-header">
+                <h1>Kết quả</h1>
+            </div>
+            
+            <div class="result-card">
+                <div class="result-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="correctCount">0</span>
+                        <span class="stat-label">Đúng</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="incorrectCount">0</span>
+                        <span class="stat-label">Sai</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="scorePercentage">0%</span>
+                        <span class="stat-label">Điểm số</span>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button class="btn btn-primary" id="retryWrongBtn">Làm lại câu sai</button>
+                    <button class="btn btn-secondary" id="homeBtn">Về trang chủ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay hidden">
+            <div class="loading-spinner"></div>
+            <p>Đang tải giải thích...</p>
+        </div>
+
+        <!-- API Key Dialog -->
+        <div id="apiKeyDialog" class="dialog-overlay hidden">
+            <div class="dialog-content">
+                <h2>Cấu hình Gemini API Key</h2>
+                <p class="dialog-description">
+                    Để sử dụng tính năng giải thích tự động, vui lòng nhập API key của bạn.
+                    <br><br>
+                    <strong>Lấy API key miễn phí tại:</strong><br>
+                    <a href="https://aistudio.google.com/app/apikey" target="_blank">https://aistudio.google.com/app/apikey</a>
+                </p>
+                <input 
+                    type="text" 
+                    id="apiKeyInput" 
+                    class="api-key-input" 
+                    placeholder="Nhập API key của bạn (VD: AIzaSy...)"
+                />
+                <div class="dialog-actions">
+                    <button class="btn btn-secondary" id="skipApiKeyBtn">Bỏ qua</button>
+                    <button class="btn btn-primary" id="saveApiKeyBtn">Lưu</button>
+                </div>
+                <p class="dialog-note">
+                    <small>API key sẽ được lưu trên trình duyệt của bạn. Bạn có thể thay đổi bất cứ lúc nào bằng cách click vào biểu tượng ⚙️ ở góc trên.</small>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

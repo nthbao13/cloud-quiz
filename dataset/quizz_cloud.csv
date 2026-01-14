@@ -1,0 +1,1207 @@
+Quiz,Question,Answer,Explain
+Quiz 1,,,
+,"Khi tổ chức ảo (Virtual Organization - VO) chia sẻ tài nguyên thì tuân theo các luật nào:
+a. Dùng các tiêu chuẩn mở - Uses open standards and interfaces
+b. Ai được chia sẻ - who is allowed to share
+c. Tài nguyên nào được chia sẻ - what is shared
+d. Trong điều kiện nào được chia sẻ - the conditions under which sharing occurs","Tài nguyên nào được chia sẻ - what is shared, Ai được chia sẻ - who is allowed to share, Trong điều kiện nào được chia sẻ - the conditions under which sharing occurs",
+,"Trong các mẫu sau, mẫu nào không phải là 1 dạng của Distributed Computing
+a. Personal computing
+b. Grid computing
+c. Cluster computing
+d. Cloud computing",Personal computing,
+,"Trong cloud computing, thuật ngữ nào dùng để mô tả khả năng vô hạn (Endless possibility)
+a. Accessibility
+b. One single integrated environment
+c. Availability
+d. Scalability","Scalability, Accessibility, Availability",
+,"Trong cloud computing, dưới góc nhìn của 1 tổ chức (doanh nghiệp, chính phủ) thì cần những gì:
+a. invisible
+b. Zero management
+c. providing unbounded scale
+d. quality of service","providing unbounded scale, quality of service",
+,"Trong lập trình song song có những mô hình nào
+a. Shared-memory model
+b. Massage Passing Interface (MPI)
+c. Distributed-memory model
+d. MIMD","Shared-memory model, Distributed-memory model, Massage Passing Interface (MPI)","a. Shared-memory model → Các tiến trình/luồng chia sẻ chung bộ nhớ, giao tiếp qua biến chung.
+b. Message Passing Interface (MPI) → Mô hình giao tiếp bằng gửi – nhận thông điệp giữa các tiến trình (không dùng chung bộ nhớ).
+c. Distributed-memory model → Mỗi tiến trình có bộ nhớ riêng, trao đổi dữ liệu qua message passing.
+d. MIMD → Kiến trúc song song: nhiều lệnh, nhiều dữ liệu chạy đồng thời."
+,"Trong cluster computing các node giao tiếp với nhau dựa trên:
+a. MPI-synchronization
+b. MPI-blocking
+c. MPI-asynchronization
+d. MPI-nonblocking",MPI-synchronization,
+,"Các Node trong grid computing:
+a. Trộn lẫn giữa môi trường đồng nhất và không đồng nhất (Mixed)
+b. Cùng sử dụng chung bộ nhớ (Shared memory)
+c. Môi trường không đồng nhất (heterogeneous)
+d. Môi trường đồng nhất (Homogeneity )",Môi trường không đồng nhất (heterogeneous),
+,"Những giá trị cốt lõi của cloud computing
+a. Cung cấp nhanh chóng - Rapid provisioning
+b. Loại bỏ sự phức tạp của IT - Removing IT complexity
+c. Chi phí thấp - Lower costs
+d. Dùng bao nhiêu trả bấy nhiêu - Pay for what is used","Chi phí thấp - Lower costs, Dùng bao nhiêu trả bấy nhiêu - Pay for what is used, Cung cấp nhanh chóng - Rapid provisioning, Loại bỏ sự phức tạp của IT - Removing IT complexity",
+,"Trong mô hình lập trình song song theo cách chia của Flynn thì mô hình nào dùng 1 lệnh để xử lý nhiều dữ liệu
+a. SIMD
+b. MISD
+c. MIMD
+d. SISD",SIMD,"Theo phân loại Flynn, mô hình dùng 1 lệnh để xử lý nhiều dữ liệu là:
+a. SIMD (Single Instruction, Multiple Data)
+→ Một lệnh, xử lý nhiều dữ liệu song song."
+,,,
+Quiz 2,,,
+,"Which Azure Cosmos DB API would you use if you need to work with a graph database?
+a. Cassandra API
+b. SQL API
+c. Table API
+d. Gremlin API/p>",Gremlin API/p>,"a. Cassandra API (sai) → Dùng cho wide-column / NoSQL, không phải graph.
+b. SQL API (sai) → Dùng cho document database (JSON).
+c. Table API (sai) → Dùng cho key–value / table storage.
+d. Gremlin API (đúng) → Dùng cho graph database, hỗ trợ truy vấn đồ thị bằng Gremlin."
+,"Which of the following PowerShell commands is used to create a new Azure Storage account?
+a. Add-AzStorageAccount
+b. New-AzStorageAccount/p>
+c. Create-AzStorageAccount
+d. New-AzureStorageAccount",New-AzStorageAccount/p>,"- Add-AzStorageAccount: Sai động từ (thường dùng để thêm cấu hình, không phải tạo mới).
+- New-AzStorageAccount: Đúng, lệnh chuẩn của module Az hiện đại.
+- Create-AzStorageAccount: Sai động từ (PowerShell không dùng ""Create"" để tạo tài nguyên).
+- New-AzureStorageAccount: Sai module (đây là lệnh cũ của bản Classic đã lỗi thời)."
+,"How does Azure Storage pricing typically work?
+a. Based on subscription type/p>
+b. By the total size of the files stored
+c. By the number of requests made to the storage
+d. By the amount of data stored and data transactions",By the amount of data stored and data transactions,"- Loại gói đăng ký (Subscription type): Sai, subscription chỉ quyết định cách bạn thanh toán, không quyết định đơn giá lưu trữ.
+- Tổng dung lượng file (Total size): Đúng nhưng chưa đủ, vì Azure còn tính phí dựa trên các hoạt động truy cập dữ liệu.
+- Số lượng yêu cầu (Number of requests): Đúng nhưng chưa đủ, nếu bạn chỉ gửi yêu cầu mà không lưu trữ dữ liệu thì phí vẫn khác.
+- Lượng dữ liệu lưu trữ và các giao dịch dữ liệu: Đúng nhất, hóa đơn hàng tháng sẽ bao gồm: dung lượng dữ liệu (GB/tháng) + số lượng giao dịch (đọc/ghi) + phí chuyển dữ liệu (egress)."
+,"What is the default consistency level in Azure Cosmos DB?
+a. Eventual
+b. Session/p>
+c. Bounded Staleness
+d. Strong",Session/p>,"- Eventual: Mức thấp nhất, dữ liệu có độ trễ lớn nhất nhưng chi phí rẻ nhất.
+- Session: Đúng, đây là mức mặc định, đảm bảo người dùng đọc lại được đúng dữ liệu họ vừa ghi.
+- Bounded Staleness: Dữ liệu cũ hơn một khoảng thời gian hoặc số phiên bản nhất định sẽ bị loại bỏ.
+- Strong: Mức cao nhất, đảm bảo mọi người dùng đều thấy dữ liệu mới nhất đồng thời nhưng chi phí cao."
+,"Which of the following is a key feature of Azure Cosmos DB?
+a. Only supports SQL queries
+b. Guaranteed low latency at the 99th percentile/p>
+c. No support for multi-region replication
+d. Manual scaling",Guaranteed low latency at the 99th percentile/p>,"- Chỉ hỗ trợ SQL: Sai, hỗ trợ nhiều API khác như MongoDB, Cassandra, Gremlin, Table.
+- Cam kết độ trễ thấp ở bách phân vị thứ 99: Đúng, Cosmos DB cam kết độ trễ dưới 10ms (cho cả đọc và ghi) qua SLA.
+- Không hỗ trợ sao chép đa vùng: Sai, phân phối toàn cầu (Global Distribution) là tính năng cốt lõi.
+- Tự động điều chỉnh quy mô (Scaling): Sai, Cosmos DB hỗ trợ tự động điều chỉnh (Autoscale) thay vì chỉ làm thủ công."
+,"Which command in PowerShell is used to set the access level of a container to Blob in Azure Blob Storage?
+a. Set-AzStorageContainerACL
+b. Set-AzBlobContainerAccessLevel
+c. Set-AzStorageBlobACL/p>
+d. Set-AzContainerPermission","Set-AzStorageContainerACL, Set-AzStorageBlobACL/p>",
+,"Trong các đặc điểm sau, đặc điểm nào nói đến chất lượng dịch vụ:
+a. Quản lý băng thông
+b. Đánh giá khách hàng
+c. Đánh giá công nghệ
+d. Kiểm soát luồng dựa trên mức độ ưu tiên","Quản lý băng thông, Kiểm soát luồng dựa trên mức độ ưu tiên",
+,"Shared access signature
+You are the security engineer for a company. One of the developers has mistakenly checked in the storage access key as part of a test file into a Git repository. You are planning to immediately regenerate new access keys. Which of the following existing authorization keys will have to be regenerated?
+a. AAD security groups
+b. Account shared access signature keys
+c. Service shared access signature keys
+d. User delegation shared access signature keys","Account shared access signature keys, Service shared access signature keys","- AAD security groups: Không cần cấp lại vì nhóm bảo mật sử dụng danh tính (Identity), không phụ thuộc vào Access Key.
+- Account SAS keys: Phải cấp lại, vì loại SAS này được ký trực tiếp bằng Access Key; khi Key đổi, SAS này vô hiệu.
+- Service SAS keys: Phải cấp lại (tương tự Account SAS) nhưng đáp án B bao quát hơn vì Access Key bị lộ ảnh hưởng toàn tài khoản.
+- User delegation SAS keys: Không cần cấp lại vì loại này được ký bằng quyền của User (AD), không dùng Access Key."
+,"Which of the following is NOT a type of Azure Storage account?
+a. Archive Storage
+b. Blob Storage
+c. General-purpose v1
+d. File Storage/p>",Archive Storage,"- Archive Storage: Đây là một mức truy cập (access tier) nằm trong Blob Storage, không phải là một loại tài khoản riêng biệt.
+- Blob Storage: Là loại tài khoản chuyên dùng để lưu trữ dữ liệu không cấu trúc như văn bản, hình ảnh, video.
+- General-purpose v1: Là loại tài khoản đời đầu, hỗ trợ đa dạng dịch vụ như Blobs, Files, Queues và Tables.
+- File Storage: Là loại tài khoản chuyên dụng được tối ưu hóa để lưu trữ và chia sẻ file thông qua giao thức SMB."
+,"Bảo vệ tính riêng tư trong hệ thống cloud computing
+a. Bảo vệ dữ liệu một khách hàng phải được tách biệt phù hợp với dữ liệu của khách hàng khác.
+b. Các nhà cung cấp dịch vụ đám mây phải đảm bảo rằng các ứng dụng có sẵn dưới dạng dịch vụ thông qua đám mây là an toàn.
+c. Mỗi công ty sẽ có hệ thống quản lý định danh riêng để kiểm soát việc truy cập thông tin và tài nguyên máy tính.
+d. Các nhà cung cấp đảm bảo rằng tất cả dữ liệu quan trọng đều được che giấu và chỉ những người dùng có quyền truy cập mới truy xuất vào toàn bộ dữ liệu.",Các nhà cung cấp đảm bảo rằng tất cả dữ liệu quan trọng đều được che giấu và chỉ những người dùng có quyền truy cập mới truy xuất vào toàn bộ dữ liệu.,
+,"How does Azure Cosmos DB handle global distribution?
+a. Automatically distributing data across multiple regions with manual intervention
+b. Automatically replicating data across multiple regions without manual intervention/p>
+c. Data is only replicated within the same region
+d. By replicating data across only one region",Automatically replicating data across multiple regions without manual intervention/p>,"- Tự động phân phối có can thiệp thủ công: Sai, vì Cosmos DB được thiết kế để tự động hóa hoàn toàn việc đồng bộ hóa dữ liệu.
+- Tự động sao chép không cần can thiệp: Đúng, bạn chỉ cần chọn khu vực (regions), hệ thống sẽ tự động sao chép và quản lý dữ liệu toàn cầu.
+- Chỉ sao chép trong cùng một vùng: Sai, đây là tính năng lưu trữ cục bộ (LRS), không phải đặc tính phân phối toàn cầu của Cosmos DB.
+- Chỉ sao chép qua một vùng: Sai, Cosmos DB cho phép bạn cấu hình sao chép dữ liệu đến bất kỳ số lượng vùng Azure nào trên toàn thế giới."
+,"What is the purpose of partition keys in Azure Cosmos DB?
+a. To group documents into collections
+b. To optimize query performance by distributing data across partitions
+c. To enforce data consistency
+d. To create database backups/p>",To optimize query performance by distributing data across partitions,"- Nhóm tài liệu vào collections: Sai, partition key dùng để phân chia dữ liệu bên trong một container (collection), không phải để tạo ra collection.
+- Tối ưu hiệu năng truy vấn và phân phối dữ liệu: Đúng, partition key giúp Azure phân phối dữ liệu đều vào các phân vùng vật lý để tăng tốc độ đọc/ghi.
+- Thực thi tính nhất quán dữ liệu: Sai, tính nhất quán (Consistency) được cấu hình ở cấp độ tài khoản hoặc yêu cầu, không phụ thuộc vào partition key.
+- Tạo bản sao lưu dữ liệu: Sai, việc sao lưu (backup) là một dịch vụ quản trị riêng biệt của Azure, không liên quan đến cấu trúc phân vùng dữ liệu."
+,"Song song ở mức dữ liệu là
+a. việc thực hiện song song hoặc đồng thời một chuỗi lệnh trong chương trình máy tính.
+b. tập trung vào việc phân phối các luồng thực thi song song trên các nút tính toán song song.
+c. một cách thực hiện song song một ứng dụng trên nhiều bộ xử lý.
+d. một dạng tính toán song song dựa trên việc tăng kích thước word của bộ xử lý.",một cách thực hiện song song một ứng dụng trên nhiều bộ xử lý.,"- Thực hiện song song chuỗi lệnh: Đây là định nghĩa của song song mức lệnh (Instruction-level parallelism), tập trung vào việc xử lý các lệnh riêng lẻ.
+- Phân phối luồng thực thi trên các nút: Đây thường mô tả về lập trình song song trên hệ thống phân tán (Distributed computing) hoặc đa luồng (Multi-threading).
+- Thực hiện ứng dụng trên nhiều bộ xử lý: Đúng, song song mức dữ liệu (Data-level parallelism) chia nhỏ dữ liệu để nhiều bộ xử lý thực thi cùng một lúc trên các phần dữ liệu khác nhau.
+- Tăng kích thước word của bộ xử lý: Đây là định nghĩa của song song mức bit (Bit-level parallelism), giúp xử lý các số lớn nhanh hơn."
+,"To upload a file to an Azure Blob Storage container using PowerShell, which command should be used?
+a. Upload-AzureBlob
+b. Upload-AzBlob
+c. Add-AzStorageBlob
+d. Set-AzStorageBlobContent/p>",Set-AzStorageBlobContent/p>,"- Upload-AzureBlob: Sai, đây không phải là một lệnh hợp lệ trong module Azure PowerShell hiện đại.
+- Upload-AzBlob: Sai, mặc dù tên nghe có vẻ hợp lý nhưng nó không tồn tại trong thư viện lệnh của Azure.
+- Add-AzStorageBlob: Sai, lệnh này thường bị nhầm lẫn nhưng thực tế không được dùng để upload file.
+- Set-AzStorageBlobContent: Đúng, đây là lệnh chuẩn để tải (upload) một file từ máy cục bộ lên Azure Blob Storage."
+,"Azure Cosmos DB is best described as which type of database?
+a. Distributed, multi-model database
+b. Key-value store/p>
+c. Relational database
+d. Document-only database","Distributed, multi-model database","- Distributed, multi-model database: Đúng, đây là cơ sở dữ liệu phân tán toàn cầu và hỗ trợ nhiều mô hình dữ liệu (Document, Graph, Key-value, Column-family).
+- Key-value store: Sai, mặc dù có hỗ trợ Key-value (Table API) nhưng đây chỉ là một phần nhỏ trong khả năng của nó.
+- Relational database: Sai, Cosmos DB là cơ sở dữ liệu NoSQL (phi quan hệ), dù có thể truy vấn bằng cú pháp giống SQL.
+- Document-only database: Sai, nó không chỉ lưu trữ tài liệu mà còn xử lý được cả đồ thị và các cấu trúc dữ liệu khác."
+,"You have been hired as an external consultant to evaluate Azure Blob storage. Your team has been using Blob storage for a month now. You want to find the usage and availability of the Blob storage.
+You can find the Blob storage usage from the Storage Metrics tab.
+a. Đúng
+b. Sai","""Đúng""","- Tab Storage Metrics: Đây là nơi cung cấp các biểu đồ và dữ liệu về hiệu suất, lưu lượng và tính sẵn sàng của tài khoản lưu trữ.
+- Usage (Sử dụng): Bạn có thể xem tổng dung lượng, số lượng request và băng thông đã tiêu thụ.
+- Availability (Tính sẵn sàng): Metrics cung cấp tỷ lệ phần trăm các yêu cầu thành công so với tổng số yêu cầu gửi đến."
+,"Các kỹ thuật được sử dụng trong điện toán đám mây.
+a. Parallelized and distributed computing
+b. Web browser
+c. Web service
+d. Hardware virtualization","Hardware virtualization, Parallelized and distributed computing, Web service","- Parallelized and distributed computing: Đúng, là nền tảng để xử lý khối lượng dữ liệu khổng lồ trên nhiều máy chủ cùng lúc.
+- Web browser: Sai, đây là công cụ truy cập, không phải là kỹ thuật xây dựng nên điện toán đám mây.
+- Web service: Đúng, là phương thức để các ứng dụng và dịch vụ đám mây giao tiếp với nhau qua internet.
+- Hardware virtualization: Đúng, là kỹ thuật quan trọng nhất (ảo hóa) giúp chia sẻ tài nguyên phần cứng vật lý thành nhiều máy ảo."
+,"What is the maximum size of a single blob in Azure Blob Storage?
+a. 1 TB
+b. 5 TB/p>
+c. 2 TB
+d. 100 TB",5 TB/p>,
+,"Which of the following is used to list all containers in an Azure Storage account using PowerShell?
+a. Get-AzureStorageBlobContainer
+b. Get-AzStorageContainer
+c. List-AzStorageBlobContainer/p>
+d. Get-AzStorageContainerList",Get-AzStorageContainer,
+,"What is a Request Unit (RU) in Azure Cosmos DB?
+a. A measurement of compute capacity for read and write operations/p>
+b. A currency unit for billing
+c. A unit for measuring network traffic
+d. A limit on the number of connections allowed",A measurement of compute capacity for read and write operations/p>,
+,"You have been hired as an external consultant to evaluate Azure Blob storage. Your team has been using Blob storage for a month now. You want to find the usage and availability of the Blob storage.
+You can find the Blob availability metrics from the Storage Metrics tab.
+Chọn câu trả lời chính xác nhất:
+a. Đúng
+b. Sai","""Sai""",
+,"What is the primary use of Azure Blob Storage?
+a. Store virtual machine disks
+b. Manage databases/p>
+c. Store large amounts of unstructured data
+d. Host web applications",Store large amounts of unstructured data,"- Lưu trữ đĩa máy ảo: Sai, đây là nhiệm vụ cụ thể của Managed Disks (thực chất là Page Blobs nhưng có dịch vụ quản lý riêng).
+- Quản lý cơ sở dữ liệu: Sai, Azure có các dịch vụ riêng như Azure SQL Database hay Cosmos DB cho mục đích này.
+- Lưu trữ dữ liệu không cấu trúc: Đúng, đây là mục đích chính, dùng cho ảnh, video, tài liệu, file log và dữ liệu lớn (Big Data).
+- Host ứng dụng web: Sai, mặc dù có thể host ""static website"", nhưng dịch vụ chuyên dụng là Azure App Service hoặc Static Web Apps."
+,"In Azure Storage, what is the default protocol used for accessing files in File Storage?
+a. NFS
+b. FTP
+c. HTTP
+d. SMB/p>",SMB/p>,"a. NFS (Sai) → NFS chỉ hỗ trợ trong một số cấu hình, không phải mặc định.
+b. FTP (Sai) → Azure File Storage không dùng FTP.
+c. HTTP (Sai) → HTTP dùng cho Blob, không phải File Storage.
+d. SMB (Đúng) → Giao thức mặc định để truy cập Azure File Storage."
+,"You have been hired as an external consultant to evaluate Azure Blob storage. Your team has been using Blob storage for a month now. You want to find the usage and availability of the Blob storage.
+You can find the Blob availability metrics from the Azure Monitor -> Storage Accounts –> Insights tab.
+Chọn câu trả lời chính xác nhất:
+Đúng
+Sai","""Đúng""",→ Blob availability metrics có thể xem trong Azure Monitor → Storage Accounts → Insights.
+,"Những kỹ thuật nào giúp cho hệ thống cloud computing có khả năng chịu lỗi
+a. access
+b. backup
+c. single sign on
+d. replicate","replicate, backup","- Access (Truy cập): Sai, đây là quyền hạn vào hệ thống, không giúp khắc phục lỗi.
+- Backup (Sao lưu): Đúng, giúp khôi phục dữ liệu khi xảy ra sự cố xóa nhầm hoặc hỏng dữ liệu.
+- Single Sign On (Đăng nhập một lần): Sai, đây là kỹ thuật xác thực người dùng, không liên quan đến chịu lỗi hệ thống.
+- Replicate (Sao chép/Nhân bản): Đúng, là kỹ thuật cốt lõi. Khi một máy chủ hoặc vùng (region) bị lỗi, bản sao ở nơi khác sẽ hoạt động thay thế ngay lập tức."
+,"Which Azure Storage feature helps in automatic replication of data across regions for high availability?
+a. Geo-redundant storage (GRS)
+b. Locally redundant storage (LRS)
+c. Read-access geo-redundant storage (RA-GRS)
+d. Zone-redundant storage (ZRS)/p>",Geo-redundant storage (GRS),"- Locally redundant storage (LRS): Chỉ sao chép 3 bản trong một trung tâm dữ liệu duy nhất. Nếu trung tâm đó gặp sự cố, dữ liệu sẽ bị mất.
+- Zone-redundant storage (ZRS): Sao chép dữ liệu qua 3 Availability Zones trong cùng một vùng (Region). Chịu được lỗi cấp độ tòa nhà nhưng không chịu được lỗi cấp độ vùng.
+- Geo-redundant storage (GRS): Đúng, đây là tính năng tự động sao chép dữ liệu sang một vùng địa lý thứ hai (cách vùng chính hàng trăm dặm) để đảm bảo tính sẵn sàng cao nhất ngay cả khi cả một vùng bị thảm họa.
+- Read-access geo-redundant storage (RA-GRS): Là một biến thể của GRS, nhưng nó cho phép bạn đọc dữ liệu ở vùng thứ hai ngay cả khi vùng chính vẫn đang hoạt động bình thường."
+,"""Storage tiers
+You are a data engineer working with an ad serving company. There are three types of data the company wants to store in Azure Blob storage. Select the storage tiers that you should recommend for each of the following scenarios.
+A – Auditing data for the last 5 years for yearly financial reporting
+B – Data to generate monthly customer expenditure reports
+C – Media files to be displayed in online ads""
+
+Hot - 
+Cold - 
+Archive - ","Hot → C, Cold → B, Archive → A","Explanation
+Auditing data is accessed rarely and the use case says yearly financial reporting. So, this is a good candidate for the archive tier. The archive tier requires the data to be stored for at least 180 days.
+Monthly customer expenditure data is not used frequently, so it is a good candidate for cold storage. Cold storage requires the data to be stored for at least 30 days.
+Media files to be displayed in ads will be used every time the ad is displayed. Hence, this needs to be on the hot tier."
+,,,
+Quiz 3,,,
+,"Lợi ích của điện toán đám mây đối với công ty
+a. Giảm nhu cầu sức mạnh tính toán máy cá nhân
+b. Giảm đầu tư ban đầu
+c. Cải thiện tài nguyên sử dụng
+d. Giảm chi phí vận hành","Giảm đầu tư ban đầu, Giảm chi phí vận hành, Cải thiện tài nguyên sử dụng",
+,"Trong các module sau, module nào thuộc về SaaS
+a. Development Tools
+b. Resource Management Interface
+c. Mobile device
+d. Runtime Environment",Mobile device,"- Development Tools (Công cụ phát triển): Thuộc PaaS. Đây là môi trường để lập trình viên tạo ra phần mềm, không phải phần mềm hoàn chỉnh cho người dùng cuối (SaaS).
+- Resource Management Interface (Giao diện quản lý tài nguyên): Thuộc IaaS/PaaS. Dùng để cấu hình hạ tầng (mạng, ổ đĩa, máy ảo), không phải ứng dụng nghiệp vụ.
+- Mobile device (Thiết bị di động): Thuộc SaaS. Đây là điểm cuối mà người dùng sử dụng các app SaaS (như Facebook, Gmail, Slack). Trong các bài thi, nó đại diện cho tầng tiếp cận của người dùng cuối.
+- Runtime Environment (Môi trường thực thi): Thuộc PaaS. Là nơi cung cấp các thư viện để ứng dụng chạy (như .NET, Java), nằm dưới tầng ứng dụng SaaS."
+,"Các component trong Resource Management Interface:
+a. Virtual Storage
+b. Police-Based Control
+c. Virtual Machine
+d. Virtual Network","Virtual Machine, Virtual Storage, Virtual Network",
+,"Các mô hình triển khải cloud
+a. Public cloud
+b. Personal Cloud
+c. Hybrid Cloud
+d. Private cloud","Public cloud, Private cloud, Hybrid Cloud",
+,"MS Azure sử dụng database nào trong lưu trữ dữ liệu
+a. MSSQL
+b. DocumentDB
+c. Relational Database Server (RDS)
+d. BigQuery","MSSQL, DocumentDB","a. MSSQL (Đúng) → Azure cung cấp Azure SQL Database / SQL Server để lưu trữ dữ liệu quan hệ.
+b. DocumentDB (Đúng) → Là tiền thân của Azure Cosmos DB (SQL API).
+c. Relational Database Server (RDS) (Sai) → Dịch vụ thuộc AWS, không phải Azure.
+d. BigQuery (Sai) → Dịch vụ thuộc Google Cloud, không phải Azure."
+,"Azure Databricks được xếp vào model nào?
+a. PaaS
+b. CaaS
+c. SaaS
+d. IaaS",PaaS,"a. PaaS (Đúng) → Azure Databricks cung cấp nền tảng phân tích dữ liệu hoàn chỉnh, người dùng không quản lý hạ tầng.
+b. CaaS (Sai) → CaaS tập trung vào container, không phải Databricks.
+c. SaaS (Sai) → Không phải ứng dụng dùng trực tiếp cho end-user.
+d. IaaS (Sai) → Người dùng không quản lý VM hay hạ tầng."
+,"Which Azure Active Directory (Azure AD) feature is used to provide access to resources based on organizational policies?
+a. multi-factor authentication (MFA)
+b. Conditional Access
+c. administrative units
+d. single sign-on (SSO)",Conditional Access,"a. multi-factor authentication (MFA) (Sai) → Chỉ tăng cường xác thực, không quyết định truy cập theo chính sách.
+b. Conditional Access (Đúng) → Cấp quyền truy cập dựa trên chính sách tổ chức (user, device, location…).
+c. administrative units (Sai) → Dùng để quản lý người dùng/nhóm, không kiểm soát truy cập.
+d. single sign-on (SSO) (Sai) → Đăng nhập một lần, không phải chính sách truy cập."
+,"Which cloud approach is used by organizations to take full advantage of on-premises technology investments and allows data and applications to be shared between two environments?
+a. hybrid cloud
+b. private cloud
+c. on-premises datacenter
+d. public cloud",hybrid cloud,"a. hybrid cloud (Đúng) → Kết hợp on-premises và cloud, cho phép chia sẻ dữ liệu và ứng dụng giữa hai môi trường.
+b. private cloud (Sai) → Chỉ dùng nội bộ, không tận dụng public cloud.
+c. on-premises datacenter (Sai) → Chỉ có hạ tầng tại chỗ, không chia sẻ với cloud.
+d. public cloud (Sai) → Không tận dụng trực tiếp đầu tư on-premises."
+,"Which language is primarily used for querying data in Azure Synapse Analytics?
+a. SQL
+b. C#
+c. Java
+d. Python",SQL,"a. SQL (Đúng) → Ngôn ngữ chính để truy vấn dữ liệu trong Azure Synapse Analytics.
+b. C# (Sai) → Dùng phát triển ứng dụng, không phải truy vấn dữ liệu.
+c. Java (Sai) → Không phải ngôn ngữ truy vấn trong Synapse.
+d. Python (Sai) → Dùng cho phân tích/ML, không phải ngôn ngữ truy vấn chính."
+,"What is the primary purpose of creating a Virtual Network in Azure?
+a. To host virtual machines
+b. To manage network traffic between Azure resources
+c. To store data securely in the cloud
+d. To manage DNS settings for your domain",To manage network traffic between Azure resources,"- Host virtual machines: Sai. Virtual Network (VNet) là môi trường mạng, còn tài nguyên được đặt vào đó mới là Virtual Machines.
+- Manage network traffic: Đúng. Mục đích chính của VNet là cho phép các tài nguyên Azure (như VM) liên lạc với nhau, với Internet hoặc với mạng tại chỗ (on-premises) một cách an toàn và có kiểm soát.
+- Store data securely: Sai. Đây là nhiệm vụ của Azure Storage hoặc Azure SQL Database.
+- Manage DNS settings: Sai. Mặc dù VNet có dịch vụ DNS riêng, nhưng công cụ chuyên dụng để quản lý tên miền là Azure DNS."
+,"Một số thuộc tính mong muốn của một hệ thống phân tán quy mô lớn đã được giới thiệu trong bài 1. Danh sách bao gồm tính minh bạch của quyền truy cập, vị trí, đồng thời, sao chép, khả năng chịu lỗi, di chuyển, hiệu suất và mở rộng. Phân tích cách từng thuộc tính này áp dụng cho Azure mà em biết.","Các thuộc tính mong muốn của một hệ thống phân tán quy mô lớn đều được thể hiện trong Azure:
+Tính minh bạch truy cập: Azure cho phép người dùng truy cập tài nguyên thống nhất, không phụ thuộc vị trí hay cách triển khai.
+Tính minh bạch vị trí: Vị trí vật lý của dữ liệu và dịch vụ được ẩn đi, đảm bảo người dùng chỉ thấy một không gian tài nguyên logic.
+Tính minh bạch đồng thời: Azure duy trì tính nhất quán khi nhiều tiến trình truy cập tài nguyên cùng lúc.
+Tính minh bạch sao chép: Việc sao chép dữ liệu giữa các nút được thực hiện tự động, người dùng vẫn thấy một bản dữ liệu duy nhất.
+Khả năng chịu lỗi: Hệ thống tiếp tục hoạt động ổn định dù xảy ra lỗi phần cứng hay phần mềm.
+Tính minh bạch di chuyển: Tài nguyên có thể được di chuyển trong hệ thống mà không ảnh hưởng đến truy cập của người dùng.
+Hiệu suất: Hệ thống đảm bảo tốc độ xử lý cao và thời gian đáp ứng ổn định khi quy mô tăng.
+Khả năng mở rộng: Azure có khả năng mở rộng linh hoạt theo nhu cầu sử dụng, cả về tài nguyên và người dùng.",
+,"__________ enables you to scale to thousands of virtual machines for high-performance computing and large-scale parallel jobs.
+a. An Azure virtual machine scale set
+b. An availability set
+c. An availability zone
+d. Azure Batch",Azure Batch,"a. An Azure virtual machine scale set (Sai) → Dùng để scale VM cho ứng dụng, không chuyên cho HPC và job song song lớn.
+b. An availability set (Sai) → Dùng cho high availability, không để scale hàng nghìn VM.
+c. An availability zone (Sai) → Dùng cho khả năng chịu lỗi theo zone, không quản lý job song song.
+d. Azure Batch (Đúng) → Dịch vụ chạy high-performance computing và large-scale parallel jobs, tự động scale đến hàng nghìn VM."
+,"What is Azure Synapse Analytics?
+a. A file storage service
+b. A machine learning platform
+c. A cloud-based data warehousing solution
+d. An IoT data processing service",A cloud-based data warehousing solution,"- A file storage service: Sai, đây là nhiệm vụ của Azure Blob Storage hoặc Azure Files.
+- A machine learning platform: Sai, nền tảng chuyên biệt là Azure Machine Learning (mặc dù Synapse có tích hợp với nó).
+- A cloud-based data warehousing solution: Đúng. Azure Synapse là một dịch vụ phân tích không giới hạn, kết hợp giữa kho dữ liệu doanh nghiệp (Data Warehousing) và phân tích dữ liệu lớn (Big Data analytics).
+- An IoT data processing service: Sai, dịch vụ chuyên cho IoT là Azure IoT Hub hoặc Stream Analytics."
+,"Which tool is commonly used to develop and execute queries in Azure Synapse Analytics?
+a. Azure Data Factory
+b. Azure Data Studio
+c. Azure DevOps
+d. Azure Machine Learning Studio",Azure Data Studio,"a. Azure Data Factory (Sai) → Dùng để ETL/ELT, không phải công cụ chính để viết truy vấn.
+b. Azure Data Studio (Đúng) → Công cụ phổ biến để viết và chạy SQL queries cho Azure Synapse.
+c. Azure DevOps (Sai) → Dùng quản lý CI/CD, không để truy vấn dữ liệu.
+d. Azure Machine Learning Studio (Sai) → Dùng cho ML, không cho truy vấn Synapse."
+,"You use __________ to organize resources in an Azure subscription.
+a. Azure regions
+b. Administrative units
+c. Management groups
+d. Resource groups",Resource groups,"a. Azure regions (Sai) → Regions dùng để triển khai tài nguyên theo vị trí địa lý, không phải để tổ chức.
+b. Administrative units (Sai) → Dùng trong Azure AD, không tổ chức tài nguyên.
+c. Management groups (Sai) → Dùng để quản lý nhiều subscription, không phải trong một subscription.
+d. Resource groups (Đúng) → Dùng để tổ chức và quản lý tài nguyên trong một Azure subscription."
+,,,
+Quiz 4,,,
+,"Which of the following is NOT a type of secret that can be stored in Azure Key Vault?
+a. Virtual machine images
+b. Connection strings
+c. Passwords
+d. API keys",Virtual machine images,"a. Virtual machine images (Sai) → VM images không phải secret, được lưu ở dịch vụ khác (Compute/Storage).
+b. Connection strings (Đúng) → Có thể lưu an toàn trong Azure Key Vault.
+c. Passwords (Đúng) → Là loại secret phổ biến trong Key Vault.
+d. API keys (Đúng) → Có thể lưu và quản lý trong Key Vault."
+,"Ảo hóa hiện thực ở các mức độ nào:
+a. Hardware
+b. Virtualized instance (máy ảo chi tiết)
+c. Software
+d. Virtualization layer (Lớp ảo hóa)","Virtualized instance (máy ảo chi tiết), Virtualization layer (Lớp ảo hóa), Hardware",
+,"Ảo hóa mức độ hệ thống phục vụ cho
+a. protocol developer
+b. library developer
+c. compiler developer
+d. infrastructure developer","compiler developer, library developer",
+,"You recommend a system to use:
+1. IOT Hub to consume the data
+2. Azure Stream Analytics to process the fraud alerts
+3. Azure Synapse SQL pool to store the monthly data and generate the reports
+4. Power BI to display the monthly report
+Select one:
+True
+False","""True""","- IOT Hub can be used to consume real-time data and feed it to Azure Stream Analytics.
+- Stream Analytics can perform real-time fraud detection and store the aggregated results in Synapse SQL pool.
+- Synapse SQL pool can store petabytes of data for longer durations to generate reports.
+- Power BI can graphically display both the real-time alerts and monthly reports. 
+=> So, this is the right set of options."
+,"You are the architect of a cab company. You are designing the schema to store trip information. You have a large fact table that has a billion rows. You have dimension tables in the range of 500–600 MB and you have daily car health data in the range of 50 GB. The car health data needs to be loaded into a staging table as quickly as possible. What distributions would you choose for each of these types of data?
+A – Fact table
+B – Dimension tables
+C – Staging table
+
+Replicated
+Round Robin
+Hash","Replicated
+→ Dimension tables,
+Round Robin
+→ Staging table,
+Hash
+→ Fact table","A – Fact table (billion rows) → Hash
+→ Phân phối theo khóa (ví dụ TripID) giúp join nhanh và scale tốt với dữ liệu rất lớn.
+
+B – Dimension tables (500–600 MB) → Replicated
+→ Bản sao dimension có trên mọi node, tránh data movement khi join với fact table.
+
+C – Staging table (50 GB, load nhanh) → Round Robin
+→ Phân phối ngẫu nhiên, load nhanh nhất, không tốn chi phí tính toán hash."
+,"Ảo hóa mức độ phần cứng bằng module:
+a. translator
+b. executor
+c. emulator
+d. hypervisor",hypervisor,"a. translator (Sai) → Dùng để dịch lệnh, không trực tiếp quản lý ảo hóa phần cứng.
+b. executor (Sai) → Không phải module ảo hóa.
+c. emulator (Sai) → Mô phỏng phần cứng, khác với ảo hóa phần cứng.
+d. hypervisor (Đúng) → Module thực hiện ảo hóa mức phần cứng, quản lý và chạy máy ảo."
+,"What is Azure File Sync primarily used for?
+a. Database synchronization
+b. Synchronizing virtual machines
+c. Synchronizing emails
+d. Synchronizing files across servers",Synchronizing files across servers,"a. Database synchronization: Sai. Việc đồng bộ cơ sở dữ liệu thường sử dụng SQL Data Sync hoặc các tính năng Replication của DB.
+b. Synchronizing virtual machines: Sai. Để đồng bộ hoặc sao lưu máy ảo, Azure sử dụng Azure Site Recovery hoặc Azure Backup.
+c. Synchronizing emails: Sai. Đây là nhiệm vụ của Microsoft Exchange hoặc Outlook.
+d. Synchronizing files across servers: ĐÚNG. Azure File Sync cho phép bạn tập trung các tệp tin của tổ chức tại Azure Files, sau đó đồng bộ chúng xuống các máy chủ Windows (Windows Servers) ở khắp mọi nơi (tại văn phòng hoặc trên cloud)."
+,"What is the purpose of Azure File Sync's cloud tiering feature?
+a. To automatically delete files from synchronized servers
+b. To increase synchronization speed
+c. To move rarely accessed files to the cloud to free up local storage
+d. To compress synchronized files for faster transfer",To move rarely accessed files to the cloud to free up local storage,"a. To automatically delete files: Sai. File không bị xóa mất; chúng vẫn hiển thị trên máy chủ nhưng được chuyển sang dạng ""liên kết"" (pointer) dẫn lên đám mây.
+b. To increase synchronization speed: Sai. Mục đích chính là quản lý dung lượng, không phải tốc độ đồng bộ.
+c. To move rarely accessed files: ĐÚNG. Cloud Tiering giúp máy chủ tại chỗ của bạn đóng vai trò như một bộ nhớ đệm (cache). Những file hay dùng (hot) được giữ lại trên ổ cứng, còn những file ít dùng (cold) sẽ được đẩy lên Azure Files để giải phóng bộ nhớ cục bộ.
+d. To compress synchronized files: Sai. Tính năng này không nhằm mục đích nén file."
+,"You are designing the data processing pipeline for a cab company using Azure Data Factory. The company has two fleets of cars: electric and gas. You have to branch the pipeline based on the type of car. Which transformation would you use?
+a. Conditional Split
+b. New Branch
+c. Split
+d. Join",Conditional Split,"Conditional Split – This is used to split the input data into multiple streams based on a condition. In our use case, the condition could be the type of car.
+Join – Used to merge two inputs into one based on a Join condition, so will not work for our use case.
+Split – There is no such transformation in ADF.
+New Branch – To replicate the current source as is to perform a different set of ransformations on the same source of data. Hence, this will also not work for our use case."
+,"Khả năng mở rộng & độ co giãn trong IaaS
+a. Cung cấp và triển khai tài nguyên trong 1 thời gian ngắn
+b. Có thể truy xuất tài nguyên ngay cả khi bị lỗi phần cứng
+c. Chức năng hệ thống giống nhau cho dù quy mô lớn hay nhỏ
+d. Tăng giảm số lượng tài nguyên cần thiết","- Tăng giảm số lượng tài nguyên cần thiết, 
+- Cung cấp và triển khai tài nguyên trong 1 thời gian ngắn, 
+- Chức năng hệ thống giống nhau cho dù quy mô lớn hay nhỏ",
+,"What is Azure Key Vault primarily used for?
+a.Virtual machine deployment
+b. Secret and key management
+c. Network security
+d. Database management",Secret and key management,
+,"Which file format is used for defining Azure Resource Manager templates?
+a. YAML
+b. JSON
+c. CSV
+d. XML",JSON,
+,"What is the main benefit of using Azure Resource Manager templates for deployment?
+a. Resources can be deployed consistently and repeatedly
+b. It provides a limited set of resources for deployment
+c. Manual intervention is required for each resource deployment
+d. Resources are automatically deployed without any control",Resources can be deployed consistently and repeatedly,
+,"You recommend a system to use:
+1. IOT Hub to consume the data
+2. Azure Stream Analytics to process the fraud alerts
+3. Azure Databricks to store the monthly data and generate the reports
+4. Power BI to display the monthly report
+Select one:
+True
+False",False',We cannot use Azure Databricks to store the monthly data. It is not a storage service; it is a compute service.
+,"You are a data engineer for an online bookstore. The bookstore processes hundreds of millions of transactions every month. It has a Catalog table of about 100 MB. Choose the optimal distribution for the Catalog table and complete the following script:
+CREATE TABLE Catalogue (
+BookID VARCHAR 50,
+BookName VARCHAR 100,
+ISBN: VARCHAR 100,
+FORMAT: VARCHAR 20
+
+) WITH
+CLUSTERED COLUMNSTORE INDEX,
+DISTRIBUTION = ___________
+)
+
+a. PARTITION
+b. ROUND-ROBIN
+c. REPLICATE
+d. HASH",REPLICATE,"a. PARTITION: Sai. Đây không phải là một kiểu phân tán (distribution), mà là một cách chia nhỏ dữ liệu bên trong một bảng.
+b. ROUND-ROBIN: Sai. Thường dùng cho bảng tạm (staging) để nạp dữ liệu nhanh, không tối ưu cho các phép nối (join) trong bảng danh mục.
+c. REPLICATE: ĐÚNG. Bảng Catalogue có kích thước 100 MB (khá nhỏ). Khi dùng REPLICATE, một bản sao đầy đủ của bảng này sẽ được lưu trữ trên mỗi node tính toán. Điều này giúp các phép JOIN với bảng giao dịch (fact table) khổng lồ diễn ra cực nhanh vì không cần di chuyển dữ liệu qua mạng.
+d. HASH: Sai. Thường dùng cho các bảng lớn (hàng trăm triệu dòng) để chia đều dữ liệu dựa trên một cột khóa."
+,"What are the two main sections of an Azure Resource Manager template?
+a. Resources and Parameters
+b. Parameters and Outputs
+c. Functions and Outputs
+d. Properties and Variables",Parameters and Outputs,
+,"Trong các thuật ngữ sau, thuật ngũ nào dùng nói máy ảo
+a. Host
+b. client
+c. virtual
+d. Guest",Guest,"a. Host (Sai) → Host là máy vật lý chạy các máy ảo.
+b. client (Sai) → Client là máy/người dùng truy cập dịch vụ.
+c. virtual (Sai) → Chỉ là tính từ, không phải thuật ngữ chỉ máy ảo.
+d. Guest (Đúng) → Guest dùng để chỉ máy ảo chạy trên host."
+,"Ý nghĩa của hiệu suất và tối ưu trong IaaS
+a. Sử dụng nguồn tài nguyên hiệu quả phục vụ cho nhiều khách hàng
+b. Tài nguyên vật lý kết nối lại với nhau thành một hệ thống lớn cung cấp khả năng tính toán hiệu suất cao thông qua kết nối song song
+c. Tài nguyên cơ sở hạ tầng ảo sẽ được định cấu hình động để triển khai tối ưu giữa các tài nguyên vật lý.
+d. Các nguồn lực cơ sở hạ tầng được cung cấp có thể được phân bổ lại hoặc nhân bản một cách dễ dàng","- Sử dụng nguồn tài nguyên hiệu quả phục vụ cho nhiều khách hàng, 
+- Tài nguyên vật lý kết nối lại với nhau thành một hệ thống lớn cung cấp khả năng tính toán hiệu suất cao thông qua kết nối song song, 
+- Tài nguyên cơ sở hạ tầng ảo sẽ được định cấu hình động để triển khai tối ưu giữa các tài nguyên vật lý.",
+,"Kỹ thuật giả lập
+a. Mô phỏng môi trường trong trường hợp kiến trúc tập lệnh máy ảo và máy khách giống nhau 1 phần
+b. Mô phỏng môi trường trong trường hợp kiến trúc tập lệnh máy ảo và máy khách trên một CPU
+c. Mô phỏng môi trường trong trường hợp kiến trúc tập lệnh máy ảo và máy khách giống nhau
+d. Mô phỏng môi trường trong trường hợp kiến trúc tập lệnh máy ảo và máy khách khác nhau",Mô phỏng môi trường trong trường hợp kiến trúc tập lệnh máy ảo và máy khách khác nhau,
+,"What is the primary purpose of Azure Resource Manager (ARM) templates?
+a. To automate the deployment of Azure resources
+b. To monitor resource usage in Azure
+c. To provide a graphical user interface for Azure management
+d. To manage virtual machine configurations",To automate the deployment of Azure resources,"a. To automate the deployment: ĐÚNG. ARM templates là các tệp mã (JSON hoặc Bicep) cho phép bạn định nghĩa toàn bộ hạ tầng dưới dạng code (Infrastructure as Code - IaC). Bạn có thể dùng một tệp này để triển khai lặp lại cùng một môi trường giống hệt nhau một cách tự động và nhất quán.
+b. To monitor resource usage: Sai. Việc giám sát tài nguyên là nhiệm vụ của Azure Monitor.
+c. To provide a GUI: Sai. Đây là các tệp văn bản. Giao diện đồ họa để quản lý Azure là Azure Portal.
+d. To manage VM configurations: Sai một phần. Mặc dù ARM template có thể cài đặt máy ảo, nhưng nhiệm vụ chính của nó là triển khai hạ tầng tổng thể, còn việc quản lý bên trong hệ điều hành thường dùng Azure Policy hoặc Desired State Configuration (DSC)."
+,"Let's assume that you have a Customer table with sensitive information in it. You want to hide the Social Security Number (SSN) details from LowPrivUser. Here is the table definition: CREATE TABLE Customer
+(
+CustomerID VARCHAR (20),
+Name VARCHAR (200),
+SSN VARCHAR (9) NOT NULL,
+Phone VARCHAR (12) NULL,
+);
+Complete the following code snippet:
+GRANT ___________ Customer (CustomerID, Name, Phone) TO LowPrivUser';
+
+a. ENCRYPT ON
+b. ALTER ON
+c. SELECT ON
+d. MASK ON",SELECT ON,"SELECT ON – Gives permission to run the SELECT queries only on CustomerID, Name, and Phone, which is what is required in this use case.
+ALTER ON – Gives permission to change the table itself – this is not what is asked in the question.
+MASK ON – Invalid syntax; there is no syntax called MASK ON.
+ENCRYPT ON – Invalid syntax; there is no syntax called ENCRYPT ON."
+,"What is the role of the ""outputs"" section in an ARM template?
+a. It defines the dependencies between resources
+b. It specifies the output values of the template
+c. It specifies the input values required during deployment
+d. It defines the structure of the template",It specifies the output values of the template,
+,"What type of encryption does Azure Disk Encryption provide for Azure virtual machines?
+a. RSA encryption
+b. AES encryption
+c. TLS encryption
+d. SSL encryption",RSA encryption,
+,"Azure File Sync is compatible with which types of servers?
+a. Only Windows servers
+b. Only Linux servers
+c. Both Linux and Windows servers
+d. Only macOS servers",Both Linux and Windows servers,
+,,,
+Quiz 5,,,
+,"Cho biết có bao nhiêu cách hiện thực của bộ mô phỏng
+a. Thông dịch
+b. Bộ chuyển dịch nhị phân tĩnh
+c. Thư viện động
+d. Bộ chuyển dịch nhị phân động","Thông dịch, Bộ chuyển dịch nhị phân tĩnh, Bộ chuyển dịch nhị phân động","a. Thông dịch (Đúng) → Bộ mô phỏng có thể hiện thực dưới dạng thông dịch từng lệnh của chương trình gốc.
+b. Bộ chuyển dịch nhị phân tĩnh (Đúng) → Có thể chuyển toàn bộ chương trình gốc sang chương trình đích trước khi chạy.
+c. Thư viện động (Sai) → Thư viện động là cách phân phối chức năng, không phải một cách hiện thực bộ mô phỏng.
+d. Bộ chuyển dịch nhị phân động (Đúng) → Có thể dịch từng đoạn mã trong quá trình chạy, giúp mô phỏng hiệu quả hơn."
+,"Bộ chuyển dịch nhị phân tĩnh
+a. Dịch từng câu lệnh
+b. Dịch tuần tự từng câu lệnh
+c. Dịch cả khối lệnh và kết hợp kỹ thuật tối ưu lúc biên dịch chương trình
+d. Kết hợp dịch từng lệnh và khối lệnh, bên cạnh đó sử dụng kỹ thuật tối ưu lúc biên dịch chương trình",Dịch cả khối lệnh và kết hợp kỹ thuật tối ưu lúc biên dịch chương trình,"a. Dịch từng câu lệnh (Sai) → Đây là đặc trưng của bộ thông dịch hoặc bộ chuyển dịch nhị phân động, không phải tĩnh.
+b. Dịch tuần tự từng câu lệnh (Sai) → Cũng không đúng, vì tĩnh dịch toàn bộ chương trình trước khi chạy.
+c. Dịch cả khối lệnh và kết hợp kỹ thuật tối ưu lúc biên dịch chương trình (Đúng) → Bộ chuyển dịch nhị phân tĩnh dịch toàn bộ chương trình hoặc từng khối lệnh trước khi chạy, đồng thời áp dụng các tối ưu khi biên dịch.
+d. Kết hợp dịch từng lệnh và khối lệnh, bên cạnh đó sử dụng kỹ thuật tối ưu lúc biên dịch chương trình (Sai) → Dịch từng lệnh là đặc trưng của động, nên không đúng với tĩnh."
+,"Azure Automation accounts allow for the execution of PowerShell runbooks at a predefined schedule.
+Select one:
+True
+False","""True""",You can define one or more schedules within an Azure Automation Account and then link these to a Runbook.
+,"How does Azure Databricks handle large volumes of data?
+a. By storing data in memory for fast access
+b. By compressing data to reduce storage requirements
+c. By partitioning data across multiple nodes for parallel processing
+d. By discarding old data to make room for new data",By partitioning data across multiple nodes for parallel processing,
+,"Reorder the following Azure DevOps concepts in such a way that each element acts as a container for the next concept in the list: (chọn phần nằm ở top)
+a. Organization
+b. Region
+c. Project
+d. Work item",Work item,"An Azure DevOps organization is the top-level construct that can be created by users. Every organization is in precisely one region, which is maintained by Microsoft. Within an organization, one or more projects can be created. In turn, a project can contain many work items, such as user stories, features, or epics."
+,"Which Azure service is integrated with Azure Databricks for data storage and processing?
+a. Azure Cosmos DB
+b. Azure SQL Database
+c. Azure Data Factory
+d. Azure Data Lake Storage",Azure Data Lake Storage,"a. Azure Cosmos DB (Sai) → Cosmos DB là cơ sở dữ liệu NoSQL, không phải dịch vụ lưu trữ chính cho Databricks.
+b. Azure SQL Database (Sai) → SQL Database là cơ sở dữ liệu quan hệ, không phải giải pháp lưu trữ trực tiếp cho Databricks.
+c. Azure Data Factory (Sai) → Data Factory là dịch vụ chuyển dữ liệu (ETL/ELT), không phải nơi lưu trữ trực tiếp.
+d. Azure Data Lake Storage (Đúng) → Azure Databricks tích hợp trực tiếp với Data Lake Storage để lưu trữ và xử lý dữ liệu lớn, hỗ trợ phân tích và AI."
+,"Which type of container technology is supported by Azure Container Instances?
+a. Kubernetes
+b. Docker
+c. Mesos
+d. OpenShift",Docker,
+,"Which Azure CLI command is used to create a new Azure Container Instance?
+a. az container create
+b. az container new
+c. az instance new
+d. az instance create",az container create,
+,"Các câu lệnh dùng để quản lý trạng thái của hệ thống (VMCS - Virtual Machine Control Structure), khi hệ thống rơi vào State Area, cặp câu lệnh nào dùng để lưu trữ trạng thái của hệ thống máy ảo và máy thực.
+a. VM-Entry and VM-Exit process
+b. VM-Entry & VM-Exit
+c. VM-Context & VM-Control
+d. VM Non-Root Mode & VM Root Mode",VM-Entry & VM-Exit,"a. VM-Entry and VM-Exit process (Sai) → Đây chỉ mô tả quá trình vào/ra chế độ ảo hóa, không trực tiếp là câu lệnh lưu trữ trạng thái.
+b. VM-Entry & VM-Exit (Đúng) → Đây là cặp câu lệnh dùng để lưu trữ trạng thái của hệ thống, bao gồm trạng thái máy ảo và máy thực, khi chuyển giữa VM Non-Root Mode và VM Root Mode.
+c. VM-Context & VM-Control (Sai) → Không phải câu lệnh, chỉ là cấu trúc quản lý trạng thái.
+d. VM Non-Root Mode & VM Root Mode (Sai) → Đây là chế độ hoạt động của CPU trong ảo hóa, không phải câu lệnh lưu trạng thái."
+,"Các vấn đề gặp phải khi thực hiện ánh xạ thanh ghi
+a. Ánh xạ các thanh ghi đặc biệt
+b. Số lượng thanh ghi máy thực nhiều hơn máy ảo
+c. Sử dụng phần mềm ánh xạ thanh ghi
+d. Số lượng thanh ghi máy thực ít hơn máy ảo","Số lượng thanh ghi máy thực ít hơn máy ảo, 
+Ánh xạ các thanh ghi đặc biệt","a. Ánh xạ các thanh ghi đặc biệt (Đúng) → Một số thanh ghi đặc biệt của CPU khó ánh xạ trực tiếp sang thanh ghi ảo, cần xử lý đặc biệt.
+b. Số lượng thanh ghi máy thực nhiều hơn máy ảo (Sai) → Đây không phải vấn đề; thừa thanh ghi thực không gây khó khăn.
+c. Sử dụng phần mềm ánh xạ thanh ghi (Sai) → Đây là cách giải quyết, không phải vấn đề gặp phải.
+d. Số lượng thanh ghi máy thực ít hơn máy ảo (Đúng) → Khi thanh ghi thực ít hơn thanh ghi ảo, phải dùng kỹ thuật spill/fill để lưu/khôi phục thanh ghi, gây phức tạp."
+,"What is the main benefit of using Text Analytics in Azure Cognitive Services?
+a. Ability to process structured data
+b. Real-time analysis of text data
+c. Integration with other Azure services
+d. Automatic translation of text between languages",Integration with other Azure services,
+,"What role does Apache Spark play in Azure Databricks?
+a. It is the visualization tool for data analysis
+b. It is the storage layer for data in Databricks
+c. It is the processing engine for data manipulation and analysis
+d. It is the authentication and access control mechanism for Databricks",It is the processing engine for data manipulation and analysis,"a. It is the visualization tool for data analysis (Sai) → Spark không dùng để trực quan hóa; Databricks cung cấp notebooks và dashboard cho việc này.
+b. It is the storage layer for data in Databricks (Sai) → Lưu trữ dữ liệu được thực hiện bởi Azure Data Lake Storage hoặc các dịch vụ lưu trữ khác, không phải Spark.
+c. It is the processing engine for data manipulation and analysis (Đúng) → Apache Spark là công cụ xử lý dữ liệu trong Databricks, dùng cho ETL, phân tích, machine learning, và xử lý dữ liệu lớn.
+d. It is the authentication and access control mechanism for Databricks (Sai) → Quản lý quyền truy cập và bảo mật được Databricks và Azure thực hiện, không phải Spark."
+,"Khi CPU chạy ở chế độ usermode, những trap nào có thể xảy ra
+a. Exception
+b. Hardware Interrupts
+c. System call
+d. Error","System call, Hardware Interrupts, Exception","a. Exception (Đúng) → Khi CPU ở usermode, các exception (như chia cho 0, lỗi trang bộ nhớ) có thể xảy ra và được hệ thống xử lý.
+b. Hardware Interrupts (Đúng) → Ngắt phần cứng có thể xảy ra bất cứ lúc nào, kể cả khi CPU ở usermode.
+c. System call (Đúng) → Khi chương trình người dùng muốn yêu cầu dịch vụ từ kernel, system call sẽ tạo trap sang kernel mode.
+d. Error (Sai) → “Error” ở đây không phải loại trap cụ thể; lỗi có thể được biểu diễn qua exception hoặc trap nhưng không phải là một trap riêng."
+,"You work for a cab company that is storing trip data in Parquet format and fare data in CSV format. You are required to generate a report to list all the trips aggregated using the City field. The report should contain all fields from both files.
+Trip file format (Parquet):
+tripId, driverId, City, StartTime, EndTime
+Fare file format (CSV):
+tripId, Fare
+Fill in the blanks of the following code snippet to achieve the preceding objective:
+%%scala
+val fromcsv = spark.read.options(Map(""inferSchema""->""true"",""header""->""true""))
+.csv(""abfss://path/to/csv/*"")
+val fromparquet = spark.read.options(Map(""inferSchema""->""true""))
+.parquet(""abfss:// abfss://path/to/parquet/*"")
+val joinDF = fromcsv.________(fromparquet,fromcsv(""tripId"") ===
+fromparquet(""tripId""),""inner"")._________(""City"")
+
+a. join
+b. select
+c. orderBy
+d. groupBy","join, groupBy",
+,"What is the primary benefit of using Azure Container Instances?
+a. Higher container density
+b. Built-in container security
+c. Simplified container orchestration
+d. Lower container startup time",Lower container startup time,"a. Higher container density (Sai) → Container density thường liên quan đến Kubernetes hoặc VM tối ưu hóa, không phải lợi ích chính của ACI.
+b. Built-in container security (Sai) → ACI có bảo mật cơ bản, nhưng đây không phải lợi ích chính nổi bật.
+c. Simplified container orchestration (Sai) → ACI không cung cấp orchestration nâng cao; Kubernetes/Azure Kubernetes Service (AKS) làm việc này.
+d. Lower container startup time (Đúng) → Azure Container Instances cho phép khởi động container gần như ngay lập tức, đây là lợi ích chính so với triển khai container trên VM hoặc cluster."
+,"Which Azure service provides the ability to analyze large volumes of unstructured text data?
+a. Azure Speech Services
+b. Azure Translator Text API
+c. Azure Text Analytics
+d. Azure Machine Learning",Azure Text Analytics,
+,"What is Azure Databricks primarily used for?
+a. Data storage
+b. Social media integration
+c. Data import and analysis
+d. Image processing",Data import and analysis,
+,"How does Text Analytics handle multi-language text data?
+a. It automatically detects the language of the text and performs analysis accordingly
+b. It requires language-specific models to be specified for each text
+c. It only supports analysis in English
+d. It cannot analyze multi-language text data",It automatically detects the language of the text and performs analysis accordingly,
+,"Which type of data can be analyzed using Text Analytics?
+a. Both structured and unstructured data
+b. Numerical data only
+c. Unstructured data only
+d. Structured data only",Unstructured data only,
+,"One disadvantage of IaC is that you have to put sensitive information in source control as ARM template parameter files.
+Select one:
+True
+False","""False""","ARM template parameters allow the referencing of values in an Azure Key Vault, so as to prevent users from having to enter secrets or other sensitive information in source control. At the time of deployment, the secrets are retrieved and used within Azure, provided the identity that starts the operation has access to that key vault."
+,"What type of data sources can be imported into Azure Databricks?
+a. Numerical data only
+b. Unstructured data only
+c. Both structured and unstructured data
+d. Structured data only",Both structured and unstructured data,
+,"You have a table as follows in Azure SQL:
+
+CREATE TABLE Books {
+BookID VARCHAR(20) NOT NULL,
+CategoryID VARCHAR (20) NOT NULL,
+BookName VARCHAR (100),
+AuthorID VARCHAR (20),
+ISBN VARCHAR (40)
+}
+
+Assume there are 100 million entries in this table. CategoryID has about 25 entries and 60% of the books align to about 20 categories. You need to optimize the performance of this table for queries that aggregate on CategoryID. What partitioning technique would you use and what key would you choose?
+
+a. Vertical partitioning with CategoryID
+b. Horizontal partitioning with CategoryID
+c. Vertical partitioning with BookID
+d. Horizontal partitioning with BookID",Horizontal partitioning with BookID,
+,"Which container registry can be used to store container images for use with Azure Container Instances?
+a. Amazon Elastic Container Registry
+b. Azure Container Registry
+c. Google Container Registry
+d. Docker Hub",Azure Container Registry,
+,"What is the primary goal of autoscaling?
+a. To ensure the long-term reliability of a particular virtual resource
+b. To ensure the long-term reliability of a particular physical resource
+c. To ensure that a predefined service level is maintained regardless of external demand
+d. To orchestrate the use of multiple parallel resources to direct incoming user requests",To ensure that a predefined service level is maintained regardless of external demand,
+,"Các vấn đề gặp phải với cải thiện hiệu suất trong ảo hóa CPU
+a. Tối ưu việc sử dụng các thanh ghi
+b. Luồng thực thi chương trình
+c. Chuyển ngữ cảnh của chương trình trong máy ảo
+d. Kỹ thuật tối ưu mã máy đích","- Luồng thực thi chương trình, 
+- Kỹ thuật tối ưu mã máy đích",
+,"What is the maximum number of containers that can be deployed in a single Azure Container Group?
+a. 10
+b. 100
+c. There is no hard limit
+d. 1000",There is no hard limit,
+,"Which of the following tools cannot be used for managing Azure resources?
+a. Azure PowerShell
+b. Azure DevOps CLI
+c. Terraform
+d. CloudFormation",CloudFormation,"a. Azure PowerShell (Sai) → Azure PowerShell là công cụ chính để quản lý tài nguyên Azure.
+b. Azure DevOps CLI (Sai) → Có thể dùng CLI để triển khai và quản lý tài nguyên thông qua DevOps pipelines.
+c. Terraform (Sai) → Terraform hỗ trợ Azure provider, có thể quản lý và triển khai tài nguyên Azure.
+d. CloudFormation (Đúng) → CloudFormation chỉ dùng để quản lý tài nguyên AWS, không thể dùng trực tiếp cho Azure."
+,"What is Azure Container Instances primarily used for?
+a. Running containers in the cloud
+b. Managing Kubernetes clusters
+c. Monitoring container performance
+d. Storing container images",Running containers in the cloud,"a. Running containers in the cloud (Đúng) → Azure Container Instances (ACI) cho phép bạn chạy container trực tiếp trên cloud mà không cần quản lý VM hay cluster.
+b. Managing Kubernetes clusters (Sai) → Quản lý Kubernetes cluster là nhiệm vụ của Azure Kubernetes Service (AKS), không phải ACI.
+c. Monitoring container performance (Sai) → ACI có thể tích hợp giám sát, nhưng đây không phải mục đích chính.
+d. Storing container images (Sai) → Lưu trữ container images thực hiện bằng Azure Container Registry (ACR), không phải ACI."
+,"What is the role of Azure Blob Storage in Azure Databricks?
+a. To store temporary data generated during data processing
+b. To store raw data files and datasets for analysis
+c. To store metadata about Databricks jobs and clusters
+d. To store log files and diagnostic information",To store raw data files and datasets for analysis,
+,"What is the primary use case for Azure Container Instances?
+a. Real-time stream processing
+b. Batch processing
+c. Long-running applications
+d. Stateful applications",Batch processing,"a. Real-time stream processing (Sai) → ACI có thể chạy container nhanh chóng nhưng không tối ưu cho xử lý luồng thời gian thực; thường dùng các dịch vụ như Azure Stream Analytics hoặc AKS.
+b. Batch processing (Đúng) → ACI lý tưởng cho các công việc tạm thời hoặc batch, chạy container ngắn hạn, stateless, không cần quản lý hạ tầng.
+c. Long-running applications (Sai) → Dù có thể chạy, nhưng ACI không tối ưu cho ứng dụng liên tục, dài hạn; AKS hoặc VM sẽ phù hợp hơn.
+d. Stateful applications (Sai) → ACI chủ yếu chạy stateless container, không thích hợp cho ứng dụng cần lưu trữ trạng thái lâu dài."
+,,,
+Quiz 6,,,
+,"Trong các kỹ thuật sau, kỹ thuật nào được hỗ trợ bởi phần cứng:
+a. Shadow page table
+b. Extended page table
+c. virtual PTBR
+d. Page table",Extended page table,"a. Shadow page table (Sai) → Đây là kỹ thuật do phần mềm quản lý, CPU không trực tiếp hỗ trợ.
+b. Extended page table (Đúng) → EPT là kỹ thuật được CPU hỗ trợ phần cứng (Intel VT-x) để ánh xạ physical → guest physical trong ảo hóa.
+c. Virtual PTBR (Sai) → Đây là cơ chế phần mềm để quản lý bảng trang ảo, không phải hỗ trợ phần cứng.
+d. Page table (Sai) → Bảng trang là cấu trúc quản lý bộ nhớ, nhưng việc ánh xạ từ guest → host trong ảo hóa không phải lúc nào cũng được phần cứng hỗ trợ; cần EPT hoặc shadow table."
+,"Hyper-call được sử dụng để giao tiếp các thành phần nào trong ảo hóa IO
+a. Device Driver & VMM IO Component
+b. Guest OS & Device Driver
+c. Application & Guest OS
+d. VMM IO Component & Physical Device",Device Driver & VMM IO Component,"a. Device Driver & VMM IO Component (Đúng) → Hyper-call là cơ chế để guest OS (thông qua device driver) giao tiếp với VMM IO component khi thực hiện các thao tác I/O trong môi trường ảo hóa.
+b. Guest OS & Device Driver (Sai) → Guest OS giao tiếp trực tiếp với driver, không cần hyper-call.
+c. Application & Guest OS (Sai) → Application gọi system call tới OS, không dùng hyper-call.
+d. VMM IO Component & Physical Device (Sai) → VMM truy cập thiết bị vật lý trực tiếp, không qua hyper-call."
+,"Một file lớn chia ra thành các thành phần nhỏ hơn để lữu trữ. Trong file system level chia ra file lớn thành các:
+a. i-node
+b. block
+c. chunks
+d. binary",chunks,
+,"Thuộc tính nào trong ảo hóa bộ lưu trữ ảnh hưởng đến tăng hay giảm quy mô lưu trữ dữ liệu
+a. Scalability
+b. Manageability
+c. Security
+d. Availability",Scalability,
+,"Client gửi request ghi dữ liệu xuống server lưu trữ và các server thực hiện nhân bản dữ liệu theo cơ chế replication đây là cách nhân bản theo cơ chế:
+a. Asynchronous
+b. Non-Blocking
+c. Blocking
+d. Synchronous",Synchronous,"a. Asynchronous (Sai) → Trong asynchronous replication, client ghi dữ liệu mà không cần chờ các bản sao hoàn tất, không đảm bảo đồng bộ ngay lập tức.
+b. Non-Blocking (Sai) → Đây không phải thuật ngữ chuẩn cho cơ chế replication.
+c. Blocking (Sai) → Không phải cách gọi phổ biến trong replication.
+d. Synchronous (Đúng) → Synchronous replication yêu cầu client ghi dữ liệu và các server nhân bản phải hoàn tất đồng bộ trước khi ghi thành công, đảm bảo dữ liệu nhất quán trên tất cả các bản sao."
+,"Kiến trúc lưu trữ nào truy cập trực tiếp vào hệ thống lữu trữ dữ liệu không qua hệ thống mạng
+a. MAC
+b. DAS - Direct Attached Storage
+c. SAN - Storage Area Network
+d. NAS - Network Attached Storage",DAS - Direct Attached Storage,"a. MAC (Sai) → MAC liên quan đến địa chỉ mạng, không phải kiến trúc lưu trữ.
+b. DAS - Direct Attached Storage (Đúng) → DAS là lưu trữ gắn trực tiếp vào máy chủ, truy cập dữ liệu mà không qua mạng.
+c. SAN - Storage Area Network (Sai) → SAN sử dụng mạng chuyên dụng để truy cập lưu trữ.
+d. NAS - Network Attached Storage (Sai) → NAS truy cập lưu trữ qua mạng TCP/IP."
+,"Các kỹ thuật I/O truyền thống:
+a. Direct memory Access (DMA)
+b. PCI / PCI Express
+c. Memory Mapped IO (MMIO)
+d. Port Mapped IO","Direct memory Access (DMA), PCI / PCI Express","- Direct Memory Access (DMA) (Đúng) → Cho phép thiết bị I/O truyền dữ liệu trực tiếp với bộ nhớ, là kỹ thuật I/O cơ bản.
+- PCI / PCI Express (Đúng) → Là bus giao tiếp phần cứng truyền thống, dùng để kết nối thiết bị I/O với hệ thống.
+- Memory Mapped IO (MMIO) (Sai) → Đây là kỹ thuật ánh xạ bộ nhớ cho I/O, thường được xem là cơ chế phần mềm/OS, không phải “I/O truyền thống” theo định nghĩa phần cứng.
+- Port Mapped IO (Sai) → Cũng là cơ chế ánh xạ cổng, không phải bus/phần cứng truyền thống."
+,"Trong kernel space và User space có các lớp, lớp nào được sử dụng để ảo hóa phần lưu trữ
+a. Appliaction
+b. Block interface
+c. File System
+d. Device driver","File System, Block interface","a. Application (Sai) → Chỉ chạy chương trình trong user space, không trực tiếp ảo hóa lưu trữ.
+b. Block interface (Đúng) → Cung cấp abstraction cho block I/O, giúp kernel và file system không cần biết chi tiết phần cứng, là một lớp ảo hóa quan trọng.
+c. File System (Đúng) → Quản lý cấu trúc file và thư mục, ánh xạ dữ liệu lên block của thiết bị, trực tiếp ảo hóa lưu trữ cho ứng dụng.
+d. Device driver (Sai) → Điều khiển phần cứng trực tiếp, không ảo hóa lưu trữ mà chỉ thực hiện I/O."
+,"Trong ảo hóa nơi lưu trữ ở cấp độ block trên các thiết bị chuyên dụng hoặc các bộ định tuyến thông minh, đây là cách tiếp cận:
+a. Guest-based Virtualization
+b. Network-based Virtualization
+c. Storage-based Virtualization
+d. Host-based Virtualization",Network-based Virtualization,
+,"System call được sử dụng:
+a. Virtual Machine Monitor gửi request Physical Hardware
+b. IO Driver gọi các function trong Virtual Machine Monitor
+c. Guest OS gọi rountine trong IO Driver
+d. Application gọi dịch vụ trong Guest OS",Application gọi dịch vụ trong Guest OS,"a. Virtual Machine Monitor gửi request Physical Hardware (Sai) → Đây là hoạt động của VMM, không phải system call từ ứng dụng.
+b. IO Driver gọi các function trong Virtual Machine Monitor (Sai) → Đây là hyper-call hoặc gọi nội bộ kernel, không phải system call.
+c. Guest OS gọi routine trong IO Driver (Sai) → Guest OS giao tiếp với driver trực tiếp, không qua system call từ ứng dụng.
+d. Application gọi dịch vụ trong Guest OS (Đúng) → System call là cơ chế để ứng dụng user space yêu cầu dịch vụ từ kernel, ví dụ mở file, đọc ghi dữ liệu, hoặc thực hiện I/O."
+,"Các tác vụ DMA do phần mềm gây ra
+a. PCI-ISA Bridge
+b. Synchronous DMA
+c. Asynchronous DMA
+d. PCI-PCI Bridge",Synchronous DMA,
+,"Metadata lưu trữ những thông tin nào
+a. Content
+b. Attributes
+c. Permission
+d. Ownership","Attributes, Ownership, Permission",
+,"Trong các thành phần bên dưới thành phần nào có bus của máy tính được nối giữa các thiết bị phần cứng
+a. Synchronous DMA
+b. PCI & PCI Express
+c. Aynchronous DMA
+d. DMA",PCI & PCI Express,"a. Synchronous DMA (Sai) → Đây là cơ chế truyền dữ liệu trực tiếp, không phải bus vật lý.
+b. PCI & PCI Express (Đúng) → PCI/PCIe là bus máy tính, nối các thiết bị phần cứng với nhau và với CPU/memory.
+c. Asynchronous DMA (Sai) → Đây là cơ chế DMA không đồng bộ, không phải bus vật lý.
+d. DMA (Sai) → DMA là kỹ thuật truyền dữ liệu trực tiếp, không phải bus."
+,"Trong kiến trúc SAN - Storage Area Network ảo hóa thiết bị lưu trữ theo cách tiếp cận nào:
+a. Storage-based approach
+b. Network-based approach
+c. Host-based approach
+d. File level system approach","Host-based approach, Network-based approach, Storage-based approach",
+,,,
+Quiz 7,,,
+,"Which type of alert in Azure Monitor allows you to create custom queries to analyze log data and trigger alerts based on specific conditions?
+a. Smart Detection Alerts
+b. Metric Alerts
+c. Activity Log Alerts
+d. Log Analytics Alerts",Log Analytics Alerts,
+,"What type of alert in Azure Monitor is automatically generated for potential security threats identified by Azure Security Center?
+a. Log Analytics Alerts
+b. Azure Security Center Alerts
+c. Metric Alerts
+d. Activity Log Alerts",Activity Log Alerts,
+,"What is the purpose of deployment credentials in Azure App Service?
+a. To secure access to the Azure Portal
+b. To configure custom SSL certificates
+c. To encrypt sensitive data in the web application
+d. To authenticate the deployment source",To authenticate the deployment source,"a. To secure access to the Azure Portal (Sai) → Deployment credentials không dùng để đăng nhập Azure Portal.
+b. To configure custom SSL certificates (Sai) → SSL certificate được cấu hình riêng, không liên quan đến deployment credentials.
+c. To encrypt sensitive data in the web application (Sai) → Deployment credentials không mã hóa dữ liệu ứng dụng.
+d. To authenticate the deployment source (Đúng) → Deployment credentials được dùng để xác thực nguồn triển khai (ví dụ Git, FTP, hoặc các công cụ CI/CD) khi đẩy code lên Azure App Service."
+,"Jenkins agents are required for which of the following reasons? (Multiple answers are possible)
+a. They help offload the management function from the Jenkins master
+b. They allow for parallel builds.
+c. They make builds more scalable.
+d. They keep the Jenkins master less busy.","They make builds more scalable., They allow for parallel builds., They keep the Jenkins master less busy.",
+,"Which deployment method is commonly used to deploy web applications to Azure App Service?
+a. SSH
+b. Telnet
+c. RDP
+d. FTP",FTP,"a. SSH (Sai) → SSH có thể dùng để truy cập container hoặc VM, không phải phương thức triển khai chính cho App Service.
+b. Telnet (Sai) → Telnet không được dùng để triển khai ứng dụng và không an toàn.
+c. RDP (Sai) → RDP dùng để truy cập máy ảo, không triển khai trực tiếp web app.
+d. FTP (Đúng) → FTP (hoặc FTPS) là phương thức thường dùng để triển khai web applications lên Azure App Service, cùng với Git hoặc các công cụ CI/CD."
+,"Which of the following are CI tools? (Multiple answers are possible)
+a. GitHub Actions
+b. AWS Cloudbuild
+c. Kubernetes
+d. Jenkins","Jenkins, GitHub Actions, AWS Cloudbuild",
+,"What type of alert in Azure Monitor can be configured to notify you about changes to Azure Active Directory resources, such as user accounts or groups?
+a. Azure AD Alerts
+b. Log Analytics Alerts
+c. Activity Log Alerts
+d. Metric Alerts",Azure AD Alerts,
+,"What is the purpose of deployment slots in Azure App Service?
+a. To create staging environments for testing
+b. To manage environment variables
+c. To provide additional storage for web applications
+d. To configure custom domain names",To create staging environments for testing,"a. To create staging environments for testing (Đúng) → Deployment slots cho phép bạn tạo các môi trường staging hoặc testing để triển khai ứng dụng trước khi hoán đổi sang production mà không gây gián đoạn.
+b. To manage environment variables (Sai) → Biến môi trường được quản lý trực tiếp trong App Service, không phải mục đích chính của deployment slots.
+c. To provide additional storage for web applications (Sai) → Deployment slots không cung cấp thêm storage.
+d. To configure custom domain names (Sai) → Domain name cấu hình riêng cho App Service, không liên quan đến deployment slots."
+,"What is Azure App Service primarily used for?
+a. Building and hosting web applications
+b. Managing databases
+c. Hosting virtual machines
+d. Storing and processing big data",Building and hosting web applications,
+,"Mức độ lưu trữ mặc định của hàm cache() là gì?
+a. MEMORY_AND_DISK
+b. MEMORY_ONLY_SER
+c. DISK_ONLY
+d. MEMORY_ONLY",MEMORY_ONLY,"a. MEMORY_AND_DISK (Sai) → Đây là một chế độ cache, nhưng không phải mặc định.
+b. MEMORY_ONLY_SER (Sai) → Đây là chế độ lưu trữ tuần tự hóa trong bộ nhớ, không phải mặc định.
+c. DISK_ONLY (Sai) → Chỉ lưu trên đĩa, không phải mặc định.
+d. MEMORY_ONLY (Đúng) → Mức lưu trữ mặc định của cache() trong Spark là MEMORY_ONLY, tức lưu giữ RDD trong bộ nhớ mà không ghi ra đĩa."
+,"What type of alert in Azure Monitor is triggered based on specific patterns or anomalies detected in log data?
+a. Log Analytics Alerts
+b. Activity Log Alerts
+c. Anomaly Alerts
+d. Metric Alerts",Anomaly Alerts,
+,"Which Azure service allows you to visualize monitoring data collected by Azure Monitor?
+a. Azure Dashboards 
+b. Azure Event Hubs
+c. Azure Data Factory
+d. Azure Data Lake Storage",Azure Dashboards,
+,"Which type of alert in Azure Monitor is triggered based on the health status of individual Azure resources?
+a. Activity Log Alerts
+b. Resource Health Alerts
+c. Azure Security Center Alerts
+d. Metric Alerts",Resource Health Alerts,
+,"What is the primary objective of monitoring resources with Azure Monitor?
+a. To manage billing and costs
+b. To ensure data security
+c. To optimize resource usage and performance
+d. To track user logins",To optimize resource usage and performance,"a. To manage billing and costs (Sai) → Azure Monitor không trực tiếp quản lý chi phí; đó là vai trò của Azure Cost Management.
+b. To ensure data security (Sai) → Bảo mật dữ liệu liên quan đến Azure Security Center, không phải mục tiêu chính của Monitor.
+c. To optimize resource usage and performance (Đúng) → Mục tiêu chính của Azure Monitor là giám sát, thu thập dữ liệu và cảnh báo để tối ưu hiệu năng và sử dụng tài nguyên.
+d. To track user logins (Sai) → Theo dõi đăng nhập người dùng thường thực hiện bằng Azure AD Sign-in Logs, không phải Monitor."
+,"Which Azure service provides a fully managed platform for building, deploying, and scaling web applications?
+a. Azure Kubernetes Service
+b. Azure Functions
+c. Azure Virtual Machines
+d. Azure App Service",Azure App Service,"a. Azure Kubernetes Service (Sai) → AKS là dịch vụ quản lý container orchestration, không phải nền tảng web app fully managed.
+b. Azure Functions (Sai) → Functions là serverless compute, thích hợp cho event-driven workloads, không phải full web app platform.
+c. Azure Virtual Machines (Sai) → VM cung cấp infrastructure as a service, bạn vẫn phải quản lý OS và runtime.
+d. Azure App Service (Đúng) → App Service là nền tảng fully managed để xây dựng, triển khai và mở rộng web applications mà không cần quản lý hạ tầng."
+,"What is the purpose of creating alerts in Azure Monitor?
+a. To manage billing and costs
+b. To send notifications when certain conditions are met
+c. To automatically fix issues
+d. To analyze historical data",To send notifications when certain conditions are met,
+,"How often are metrics collected by Azure Monitor?
+a. Every hour
+b. Every day
+c. On demand
+d. Every minute",Every minute,"a. Every hour (Sai) → Azure Monitor không giới hạn thu thập metric theo giờ.
+b. Every day (Sai) → Metric không được thu thập hàng ngày, dữ liệu sẽ quá thưa để giám sát hiệu quả.
+c. On demand (Sai) → Metric được thu thập tự động, không phải chỉ khi yêu cầu.
+d. Every minute (Đúng) → Metrics trong Azure Monitor thường được thu thập mỗi phút, cho phép giám sát hiệu năng và trạng thái tài nguyên gần thời gian thực."
+,"What type of alert in Azure Monitor can be configured to notify you about changes to Azure resource configurations?
+a. Log Analytics Alerts
+b. Metric Alerts
+c. Service Health Alerts
+d. Activity Log Alerts",Activity Log Alerts,
+,"What is the purpose of deployment history in Azure App Service?
+a. To track changes to the web application code
+b. To track deployment activities and rollback changes if necessary
+c. To monitor the performance of the web application
+d. To manage custom domain names",To manage custom domain names,
+,"Which query language is used to analyze monitoring data in Azure Log Analytics?
+a. SQL
+b. Python
+c. JavaScript
+d. Kusto Query Language (KQL)",Kusto Query Language (KQL),
+,"What type of alert in Azure Monitor can be used to notify you about potential security vulnerabilities or threats detected in your Azure
+environment?
+a. Activity Log Alerts
+b. Azure Security Center Alerts
+c. Log Analytics Alerts
+d. Metric Alerts",Azure Security Center Alerts,
+,"Which type of alert in Azure Monitor is triggered based on the health status of Azure virtual machines and other compute resources?
+a. Metric Alerts
+b. Resource Health Alerts
+c. Log Analytics Alerts
+d. Activity Log Alerts",Resource Health Alerts,
+,"Which of the following programming languages is NOT supported by Azure App Service?
+a. C#
+b. PHP
+c. Swift
+d. Java",Swift,
+,"What type of alert in Azure Monitor can be configured to notify you about changes to Azure Active Directory resources, such as user accounts or groups?
+a. Azure AD Alerts
+b. Activity Log Alerts
+c. Metric Alerts
+d. Log Analytics Alerts",Azure AD Alerts,
+,"What type of alert in Azure Monitor can be used to notify you about potential security vulnerabilities or threats detected in your Azure environment?
+a. Activity Log Alerts
+b. Metric Alerts
+c. Azure Security Center Alerts
+d. Log Analytics Alerts",Azure Security Center Alerts,
+,,,
+Quiz 8,,,
+,"Which Azure service provides built-in monitoring and logging capabilities for Azure Load Balancer?
+a. Azure Log Analytics
+b. Azure Security Center
+c. Azure Monitor
+d. Azure Application Insights",Azure Log Analytics,
+,"Which Azure service can be integrated with Azure Load Balancer for automatic scaling based on traffic load?
+a. Azure Monitor
+b. Azure Autoscale
+c. Azure Traffic Manager
+d. Azure Security Center",Azure Autoscale,
+,"Which layer of the OSI model does Azure Load Balancer operate at?
+a. Layer 7 (Application Layer)
+b. Layer 4 (Transport Layer)
+c. Layer 3 (Network Layer)
+d. Layer 2 (Data Link Layer)",Layer 4 (Transport Layer),"a. Layer 7 (Application Layer) (Sai) → Layer 7 xử lý giao thức ứng dụng (HTTP, HTTPS), Azure Application Gateway hoạt động ở Layer 7, không phải Load Balancer.
+b. Layer 4 (Transport Layer) (Đúng) → Azure Load Balancer hoạt động ở Layer 4, dựa trên TCP/UDP để phân phối lưu lượng đến các máy chủ backend.
+c. Layer 3 (Network Layer) (Sai) → Layer 3 xử lý định tuyến IP, nhưng Load Balancer phân phối theo TCP/UDP chứ không chỉ IP.
+d. Layer 2 (Data Link Layer) (Sai) → Layer 2 liên quan đến MAC, không phải Azure Load Balancer."
+,"Which layer of the OSI model does Azure Application Gateway operate at?
+a. Layer 7 (Application Layer)
+b. Layer 2 (Data Link Layer)
+c. Layer 3 (Network Layer)
+d. Layer 4 (Transport Layer)",Layer 7 (Application Layer),"a. Layer 7 (Application Layer) (Đúng) → Azure Application Gateway hoạt động ở Layer 7, xử lý lưu lượng HTTP/HTTPS, hỗ trợ URL-based routing, SSL termination, Web Application Firewall.
+b. Layer 2 (Data Link Layer) (Sai) → Layer 2 liên quan đến MAC và switch, không phải Application Gateway.
+c. Layer 3 (Network Layer) (Sai) → Layer 3 xử lý IP routing, Application Gateway không hoạt động ở mức này.
+d. Layer 4 (Transport Layer) (Sai) → Layer 4 xử lý TCP/UDP, Azure Load Balancer mới hoạt động ở đây."
+,"What is the primary input source for Azure Load Balancer?
+a. Structured data in Azure SQL Database
+b. Static datasets in Azure Data Lake Storage
+c. Incoming network traffic
+d. Files stored in Azure Blob Storage",Incoming network traffic,
+,"What is the primary purpose of a load balancer in Microsoft Azure?
+a. Data storage
+b. Distributing incoming network traffic across multiple servers
+c. Managing virtual machines
+d. Network monitoring",Distributing incoming network traffic across multiple servers,
+,"Các công việc cần thực hiện ảo hóa đường dữ liệu
+a. Virtual forwarding instance (VFI)
+b. Hop to cloud case
+c. Hop to hop case
+d. Virtual routing and forwarding (VRF)","Hop to hop case, Hop to cloud case",
+,"What is the purpose of load balancing rules in Azure Load Balancer?
+a. To define how incoming traffic is distributed to backend servers
+b. To configure health probes
+c. To configure custom domain names
+d. To define the backend servers that receive traffic",To define how incoming traffic is distributed to backend servers,
+,"Which routing mode of Azure Application Gateway allows routing based on the content of the request?
+a. URL-based routing
+b. Cookie-based routing
+c. Round-robin routing
+d. Basic routing",URL-based routing,
+,"VLAN được ảo hóa ở lớp:
+a. 4
+b. 3
+c. 2
+d. 1",2,"a. 4 (Sai) → Layer 4 là Transport Layer, liên quan TCP/UDP, không phải VLAN.
+b. 3 (Sai) → Layer 3 là Network Layer, xử lý IP routing, không trực tiếp ảo hóa VLAN.
+c. 2 (Đúng) → VLAN hoạt động ở Layer 2 (Data Link Layer), ảo hóa mạng LAN bằng cách tách các broadcast domain.
+d. 1 (Sai) → Layer 1 là Physical Layer, liên quan tới tín hiệu vật lý, không ảo hóa VLAN."
+,"Điều nào sau đây được tối ưu hóa để lưu trữ lượng lớn dữ liệu phi cấu trúc, chẳng hạn như video và hình ảnh?
+a. Log
+b. Queue
+c. File
+d. Blod",Blod,
+,"How does Azure Application Gateway improve security for web applications?
+a. By blocking all incoming traffic
+b. By limiting the number of concurrent connections
+c. By implementing WAF (Web Application Firewall) policies
+d. By encrypting all traffic",By implementing WAF (Web Application Firewall) policies,
+,"Trong các thành phần sau, thành phần nào dùng để chuyển tiếp chuyển mạch gói:
+a. Linux bridge
+b. Hypervisor
+c. TUN/TAP
+d. Virtual NIC",Linux bridge,
+,"Which Azure service is typically used for configuring routing and implementing custom network paths in a virtual network?
+a. Azure Load Balancer
+b. Azure Virtual Network Gateway
+c. Azure Traffic Manager
+d. Azure Route Table",Azure Route Table,"a. Azure Load Balancer (Sai) → Chỉ phân phối lưu lượng đến các VM, không dùng để cấu hình routing.
+b. Azure Virtual Network Gateway (Sai) → Dùng để kết nối VNet với on-premises hoặc VPN, không trực tiếp cấu hình đường đi tùy chỉnh trong VNet.
+c. Azure Traffic Manager (Sai) → Dùng DNS-based traffic routing cho ứng dụng, không cấu hình routing trong VNet.
+d. Azure Route Table (Đúng) → Route Table cho phép bạn tạo các route tùy chỉnh trong VNet, xác định đường đi của lưu lượng mạng giữa subnets hoặc đến appliance."
+,"What type of traffic does Azure Application Gateway primarily handle?
+a. TCP
+b. HTTP/HTTPS
+c. ICMP
+d. UDP",HTTP/HTTPS,
+,"What Azure service is commonly used for multiple-site hosting to distribute traffic across different geographical locations?
+a. Azure Virtual Network
+b. Azure Traffic Manager
+c. Azure Application Gateway
+d. Azure Load Balancer",Azure Traffic Manager,
+,"Trong ảo hóa mạng bên ngoài, thực hiện ảo hóa mấy thành phần:
+a. Ảo hóa Router
+b. Ảo hóa mô hình OSI
+c. Ảo hóa Switch
+d. Ảo hóa gói tin","Ảo hóa Switch, Ảo hóa Router",
+,"How does Azure Load Balancer handle health probes?
+a. By monitoring CPU usage of backend servers
+b. By analyzing network traffic patterns
+c. By sending periodic health check requests to backend servers
+d. By blocking suspicious IP addresses",By sending periodic health check requests to backend servers,
+,"What is Azure Load Balancing used for?
+a. Optimizing database performance in Azure SQL Database
+b. Securing data at rest in Azure storage
+c. Distributing network traffic across multiple servers or virtual machines
+d. Managing DNS configurations",Distributing network traffic across multiple servers or virtual machines,
+,"What is the primary benefit of using Azure Load Balancer over traditional hardware load balancers?
+a. Higher scalability
+b. Easier implementation
+c. Better fault tolerance
+d. Lower cost",Higher scalability,
+,,,
+Quiz 9,,,
+,"Trong thiết kế hệ thống distributed file system thì đặc trưng nào cho phép tất cả client lấy cùng dữ liệu trong suốt thời gian
+a. Namespace
+b. Parallel
+c. Consistency
+d. Scope",Consistency,"a. Namespace (Sai) → Namespace chỉ định tên và tổ chức file trong hệ thống, không đảm bảo tính đồng bộ dữ liệu.
+b. Parallel (Sai) → Parallel đề cập đến khả năng truy cập đồng thời, không đảm bảo client nhận dữ liệu giống nhau.
+c. Consistency (Đúng) → Consistency đảm bảo tất cả client luôn truy xuất cùng một dữ liệu và thấy các thay đổi một cách nhất quán trong distributed file system.
+d. Scope (Sai) → Scope xác định phạm vi truy cập, không đảm bảo tính đồng bộ dữ liệu."
+,"Những đặc trưng lưu trữ dữ liệu của Hadoop File System
+a. Conherence - cho phép ghi nhiều đọc nhiều cùng 1 lúc
+b. Truy xuất dữ liệu Streaming
+c. Môi trường không đồng nhất
+d. Tập dữ liệu lớn","Tập dữ liệu lớn, Môi trường không đồng nhất, Truy xuất dữ liệu Streaming",
+,"Trong các module bên dưới đặc trưng nào dùng để xác thực và kiểm soát quyền truy cập vào file.
+a. Security
+b. Namespace
+c. Consistency
+d. Reliability",Security,
+,"Distributed File System thường được sử dụng khi nào?
+a. Nhiều người thực hiện trên cùng file
+b. Muốn truy cập dữ liệu từ xa trên các máy có vị trí địa lý xa nhau
+c. Trong trường họp backup dữ liệu
+d. Kích thước dữ liệu nhỏ hơn kích thước lưu trữ của máy","- Nhiều người thực hiện trên cùng file, 
+- Trong trường họp backup dữ liệu, 
+- Muốn truy cập dữ liệu từ xa trên các máy có vị trí địa lý xa nhau",
+,"Các chức năng của DataNode trong Hadoop File System
+a. Thực hiện tạo, xóa, sao chép các block trong hệ thống
+b. Thực hiện các tác vụ liên quan đến MetaData
+c. Thực hiện đọc ghi file theo yêu cầu của client
+d. Quản lý MetaData","Thực hiện đọc ghi file theo yêu cầu của client, Thực hiện tạo, xóa, sao chép các block trong hệ thống","a. Thực hiện tạo, xóa, sao chép các block trong hệ thống (Đúng) → DataNode quản lý các block dữ liệu, thực hiện tạo, xóa, sao chép khi cần thiết.
+b. Thực hiện các tác vụ liên quan đến MetaData (Sai) → Metadata do NameNode quản lý, không phải DataNode.
+c. Thực hiện đọc ghi file theo yêu cầu của client (Đúng) → DataNode chịu trách nhiệm trả dữ liệu và ghi dữ liệu khi client yêu cầu.
+d. Quản lý MetaData (Sai) → Metadata được quản lý bởi NameNode, DataNode không thực hiện."
+,"From the Option mentioned below which of the following files is configuration files for Hadoop?
+a. config.hdo
+b. core-site.xml
+c. mapred-site.xml
+d. hdfs-site.xml","core-site.xml, mapred-site.xml, hdfs-site.xml",
+,"Trong các hàm sau, hàm nào được GFS Client đọc dữ liệu từ chunkserver
+a. Open (name, read)
+b. Read (chunk_handle, chunk_locations)
+c. Read (chunk, handle, byte_range)
+d. Read (handle, offset, length, buffer)","Read (chunk, handle, byte_range)",
+,"What are the data components of Hadoop
+a. Hive
+b. HDFS
+c. Pig
+d. MapReduce","Pig, Hive",
+,"Trong quá trình thiết kế distributed file system thì đặc trưng nào cần chú ý khi cung cấp chức nhiều client truy xuất đồng thời vào file
+a. Namespace
+b. Scope
+c. Consistency
+d. Parallel",Parallel,
+,"Vai trò của các thành phần Google File System thì thành phần nào dùng để lưu trữ dữ liệu
+a. ChunkServer
+b. Master
+c. DataNode
+d. Client",ChunkServer,"a. ChunkServer (Đúng) → Trong Google File System (GFS), ChunkServer chịu trách nhiệm lưu trữ dữ liệu thành các chunk.
+b. Master (Sai) → Master quản lý metadata, không lưu trữ dữ liệu thực tế.
+c. DataNode (Sai) → DataNode là thành phần của Hadoop HDFS, không phải GFS.
+d. Client (Sai) → Client chỉ truy xuất dữ liệu, không lưu trữ."
+,"How many splits (input) can be made by the Hadoop framework?
+a. 4
+b. 5
+c. 3
+d. 2",5,
+,"Metadata trong GFS Master lưu trữ thông tin nào?
+a. Ánh xạ từ file xuống chunks
+b. Vị trí hiện tại của các chunks
+c. Lưu trữ các block của file
+d. Thông tin truy xuất","Ánh xạ từ file xuống chunks, Vị trí hiện tại của các chunks, Thông tin truy xuất",
+,"What are the formats for input in Hadoop?
+a. Text input format
+b. Document column format
+c. Sequence file input format.
+d. Key-value input format","Text input format, Key-value input format, Sequence file input format.",
