@@ -378,8 +378,8 @@ function displayOnlineQuestion() {
     const { questionText, options } = parseQuestionText(question.question);
     onlineQuestionText.textContent = questionText;
     
-    // Check if multiple answers
-    const correctAnswers = question.answer.split(',').map(a => a.trim());
+    // Check if multiple answers - smart split (ignore commas inside parentheses)
+    const correctAnswers = smartSplitAnswers(question.answer);
     const isMultipleChoice = correctAnswers.length > 1;
     
     // Display answers
@@ -464,6 +464,42 @@ function parseQuestionText(fullQuestion) {
     return { questionText, options };
 }
 
+// Smart split answers - ignore commas inside parentheses
+function smartSplitAnswers(answerString) {
+    if (!answerString) return [];
+    
+    const answers = [];
+    let current = '';
+    let depth = 0; // Track parentheses depth
+    
+    for (let i = 0; i < answerString.length; i++) {
+        const char = answerString[i];
+        
+        if (char === '(') {
+            depth++;
+            current += char;
+        } else if (char === ')') {
+            depth--;
+            current += char;
+        } else if (char === ',' && depth === 0) {
+            // Only split on commas outside parentheses
+            if (current.trim()) {
+                answers.push(current.trim());
+            }
+            current = '';
+        } else {
+            current += char;
+        }
+    }
+    
+    // Add the last answer
+    if (current.trim()) {
+        answers.push(current.trim());
+    }
+    
+    return answers;
+}
+
 // Start question timer
 function startQuestionTimer() {
     let timeLeft = 10;
@@ -515,8 +551,8 @@ async function submitOnlineAnswer() {
     const answerTime = lastSelectionTime ? (lastSelectionTime - answerStartTime) : 10000;
     const question = onlineQuestions[currentOnlineQuestionIndex];
     
-    // Get correct answers
-    const correctAnswers = question.answer.split(',').map(a => a.trim());
+    // Get correct answers using smart split
+    const correctAnswers = smartSplitAnswers(question.answer);
     
     // Check if answer is correct
     let isCorrect = false;
