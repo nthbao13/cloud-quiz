@@ -561,20 +561,22 @@ async function submitOnlineAnswer() {
         // No answer selected
         isCorrect = false;
     } else if (correctAnswers.length === 1) {
-        // Single choice question
-        isCorrect = selectedAnswers.length === 1 && correctAnswers.some(correctAnswer => {
-            return selectedAnswers[0].toLowerCase().includes(correctAnswer.toLowerCase()) ||
-                   correctAnswer.toLowerCase().includes(selectedAnswers[0].toLowerCase());
-        });
+        // Single choice question - exact match
+        isCorrect = selectedAnswers.length === 1 && 
+                    selectedAnswers[0].toLowerCase().trim() === correctAnswers[0].toLowerCase().trim();
     } else {
-        // Multiple choice question - must match all correct answers
+        // Multiple choice question - must match all correct answers exactly
         if (selectedAnswers.length !== correctAnswers.length) {
             isCorrect = false;
         } else {
+            // Check if all correct answers are selected (exact match)
             isCorrect = correctAnswers.every(correctAnswer => {
                 return selectedAnswers.some(selected => 
-                    selected.toLowerCase().includes(correctAnswer.toLowerCase()) ||
-                    correctAnswer.toLowerCase().includes(selected.toLowerCase())
+                    selected.toLowerCase().trim() === correctAnswer.toLowerCase().trim()
+                );
+            }) && selectedAnswers.every(selected => {
+                return correctAnswers.some(correctAnswer =>
+                    selected.toLowerCase().trim() === correctAnswer.toLowerCase().trim()
                 );
             });
         }
@@ -592,21 +594,11 @@ async function submitOnlineAnswer() {
         const option = btn.dataset.option;
         const isSelectedByUser = selectedAnswers.includes(option);
         
-        // More precise matching - normalize and compare
+        // Exact match only - no fuzzy matching to avoid false positives
         const normalizedOption = option.toLowerCase().trim();
         const isCorrectAnswer = correctAnswers.some(correctAnswer => {
             const normalizedCorrect = correctAnswer.toLowerCase().trim();
-            
-            // Exact match first
-            if (normalizedOption === normalizedCorrect) return true;
-            
-            // Check if option starts with the correct answer followed by space or parenthesis
-            if (normalizedOption.startsWith(normalizedCorrect + ' ') || 
-                normalizedOption.startsWith(normalizedCorrect + '(')) return true;
-            
-            // Check if correct answer is contained as a whole word
-            const regex = new RegExp('\\b' + normalizedCorrect.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b');
-            return regex.test(normalizedOption);
+            return normalizedOption === normalizedCorrect;
         });
         
         if (isCorrectAnswer) {
