@@ -845,7 +845,7 @@ d. Application gọi dịch vụ trong Guest OS (Đúng) → System call là cơ
 a. PCI-ISA Bridge
 b. Synchronous DMA
 c. Asynchronous DMA
-d. PCI-PCI Bridge",Synchronous DMA
+d. PCI-PCI Bridge","Synchronous DMA"
 ,"Metadata lưu trữ những thông tin nào
 a. Content
 b. Attributes
@@ -924,7 +924,7 @@ d. Storing and processing big data",Building and hosting web applications,
 a. MEMORY_AND_DISK
 b. MEMORY_ONLY_SER
 c. DISK_ONLY
-d. MEMORY_ONLY",MEMORY_ONLY,"a. MEMORY_AND_DISK (Sai) → Đây là một chế độ cache, nhưng không phải mặc định.
+d. MEMORY_ONLY","MEMORY_ONLY","a. MEMORY_AND_DISK (Sai) → Đây là một chế độ cache, nhưng không phải mặc định.
 b. MEMORY_ONLY_SER (Sai) → Đây là chế độ lưu trữ tuần tự hóa trong bộ nhớ, không phải mặc định.
 c. DISK_ONLY (Sai) → Chỉ lưu trên đĩa, không phải mặc định.
 d. MEMORY_ONLY (Đúng) → Mức lưu trữ mặc định của cache() trong Spark là MEMORY_ONLY, tức lưu giữ RDD trong bộ nhớ mà không ghi ra đĩa."
