@@ -800,7 +800,7 @@ d. Availability",Scalability,
 a. Asynchronous
 b. Non-Blocking
 c. Blocking
-d. Synchronous",Synchronous,"a. Asynchronous (Sai) → Trong asynchronous replication, client ghi dữ liệu mà không cần chờ các bản sao hoàn tất, không đảm bảo đồng bộ ngay lập tức.
+d. Synchronous","Synchronous","a. Asynchronous (Sai) → Trong asynchronous replication, client ghi dữ liệu mà không cần chờ các bản sao hoàn tất, không đảm bảo đồng bộ ngay lập tức.
 b. Non-Blocking (Sai) → Đây không phải thuật ngữ chuẩn cho cơ chế replication.
 c. Blocking (Sai) → Không phải cách gọi phổ biến trong replication.
 d. Synchronous (Đúng) → Synchronous replication yêu cầu client ghi dữ liệu và các server nhân bản phải hoàn tất đồng bộ trước khi ghi thành công, đảm bảo dữ liệu nhất quán trên tất cả các bản sao."
