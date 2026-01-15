@@ -64,6 +64,20 @@ async function init() {
     renderQuizList();
     setupEventListeners();
     checkApiKey();
+    initModeSelection();
+}
+
+// Initialize mode selection
+function initModeSelection() {
+    const singlePlayerSection = document.getElementById('singlePlayerSection');
+    if (singlePlayerSection) {
+        singlePlayerSection.style.display = 'block';
+    }
+    
+    const singlePlayerBtn = document.getElementById('singlePlayerBtn');
+    if (singlePlayerBtn) {
+        singlePlayerBtn.classList.add('active');
+    }
 }
 
 // Load quiz data from CSV

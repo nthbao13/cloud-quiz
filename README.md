@@ -4,47 +4,70 @@
 
 ## Tính năng
 
-### 1. Chế độ làm quiz
+### 1. Chế độ chơi đơn
 - **Làm theo từng quiz**: Chọn Quiz 1, Quiz 2,... để làm riêng lẻ
 - **Làm tất cả quiz**: Làm tất cả các câu hỏi từ mọi quiz
+- **Random câu hỏi**: Bật/tắt tính năng trộn thứ tự câu hỏi
 
-### 2. Trắc nghiệm thông minh
+### 2. Chế độ chơi Online 🌐 (MỚI!)
+- **Tạo phòng chơi**: Tạo phòng và chia sẻ mã phòng với bạn bè
+- **Tham gia phòng**: Nhập mã phòng để tham gia cùng người khác
+- **Chọn chủ đề**: Chủ phòng chọn quiz cụ thể hoặc tất cả
+- **Thi đấu realtime**: Mỗi câu hỏi có 10 giây
+- **Tính điểm thông minh**: 
+  - Trả lời đúng + nhanh = điểm cao
+  - Điểm tối đa: 1000 điểm/câu
+  - Điểm tối thiểu (đúng): 500 điểm/câu
+- **Bảng xếp hạng trực tiếp**: Xem điểm của tất cả người chơi realtime
+- **Kết quả cuối cùng**: Hiển thị thứ hạng với huy chương 🥇🥈🥉
+
+### 3. Trắc nghiệm thông minh
 - Tự động nhận dạng câu hỏi một đáp án hoặc nhiều đáp án
 - Hiển thị kết quả ngay sau khi submit (đúng/sai)
 - Đánh dấu đáp án đúng và sai bằng màu sắc rõ ràng
+- **Lọc bỏ câu tự luận**: Chỉ hiển thị câu trắc nghiệm trong chế độ online
 
-### 3. Giải thích câu trả lời
+### 4. Giải thích câu trả lời
 - Hiển thị explanation có sẵn từ dữ liệu
 - Tự động gọi Gemini AI để lấy giải thích nếu không có sẵn
 - Giải thích bằng tiếng Việt, ngắn gọn và dễ hiểu
 
-### 4. Kết quả và làm lại
+### 5. Kết quả và làm lại
 - Hiển thị thống kê: số câu đúng, sai, phần trăm điểm
 - **Tính năng làm lại câu sai**: Chỉ làm lại những câu đã trả lời sai
 - Nút quay về trang chủ để chọn quiz khác
 
-### 5. Giao diện
+### 6. Giao diện
 - Thiết kế tối giản, hiện đại
-- Tone màu đen trắng chủ đạo
-- Không có gradient hay icon phức tạp
+- Tone màu đen trắng chủ đạo với gradient tím cho chế độ online
 - Responsive, hoạt động tốt trên mọi thiết bị
+- Hiệu ứng animation mượt mà
 
 ## Cài đặt và sử dụng
 
-### 1. Cấu hình Gemini API (Tùy chọn)
+### 1. Cấu hình Firebase cho chế độ Online (Bắt buộc cho Online Mode)
+
+Để sử dụng tính năng chơi online, bạn cần cấu hình Firebase Realtime Database:
+
+📖 **Xem hướng dẫn chi tiết tại: [FIREBASE_SETUP.md](FIREBASE_SETUP.md)**
+
+Tóm tắt:
+1. Tạo Firebase project tại https://console.firebase.google.com/
+2. Enable Realtime Database
+3. Copy config và paste vào file `firebase-config.js`
+
+### 2. Cấu hình Gemini API (Tùy chọn)
 
 Để sử dụng tính năng giải thích tự động, bạn cần API key từ Google Gemini:
 
-1. Truy cập: https://makersuite.google.com/app/apikey
+1. Truy cập: https://aistudio.google.com/app/apikey
 2. Đăng nhập với tài khoản Google
 3. Tạo API key mới
-4. Mở file `app.js`
-5. Tìm dòng: `const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY_HERE';`
-6. Thay thế `YOUR_GEMINI_API_KEY_HERE` bằng API key của bạn
+4. Click vào biểu tượng ⚙️ trên ứng dụng và nhập API key
 
 **Lưu ý**: Nếu không cấu hình API key, ứng dụng vẫn hoạt động bình thường với explanation có sẵn trong dữ liệu.
 
-### 2. Chạy ứng dụng
+### 3. Chạy ứng dụng
 
 #### Cách 1: Mở trực tiếp file HTML
 ```bash

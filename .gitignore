@@ -15,3 +15,5 @@ npm-debug.log*
 # Temporary files
 *.tmp
 *.swp
+
+firebase-config.js
