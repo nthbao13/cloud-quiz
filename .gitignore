@@ -16,4 +16,5 @@ npm-debug.log*
 *.tmp
 *.swp
 
-firebase-config.js
+# Note: firebase-config.js is included in gh-pages branch for deployment
+# firebase-config.js
