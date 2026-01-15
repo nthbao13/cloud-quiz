@@ -591,10 +591,23 @@ async function submitOnlineAnswer() {
     allButtons.forEach(btn => {
         const option = btn.dataset.option;
         const isSelectedByUser = selectedAnswers.includes(option);
-        const isCorrectAnswer = correctAnswers.some(correctAnswer => 
-            option.toLowerCase().includes(correctAnswer.toLowerCase()) ||
-            correctAnswer.toLowerCase().includes(option.toLowerCase())
-        );
+        
+        // More precise matching - normalize and compare
+        const normalizedOption = option.toLowerCase().trim();
+        const isCorrectAnswer = correctAnswers.some(correctAnswer => {
+            const normalizedCorrect = correctAnswer.toLowerCase().trim();
+            
+            // Exact match first
+            if (normalizedOption === normalizedCorrect) return true;
+            
+            // Check if option starts with the correct answer followed by space or parenthesis
+            if (normalizedOption.startsWith(normalizedCorrect + ' ') || 
+                normalizedOption.startsWith(normalizedCorrect + '(')) return true;
+            
+            // Check if correct answer is contained as a whole word
+            const regex = new RegExp('\\b' + normalizedCorrect.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b');
+            return regex.test(normalizedOption);
+        });
         
         if (isCorrectAnswer) {
             btn.classList.add('correct');
