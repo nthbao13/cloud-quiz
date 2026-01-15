@@ -774,7 +774,7 @@ Quiz 6,,,
 a. Shadow page table
 b. Extended page table
 c. virtual PTBR
-d. Page table",Extended page table,"a. Shadow page table (Sai) → Đây là kỹ thuật do phần mềm quản lý, CPU không trực tiếp hỗ trợ.
+d. Page table","Extended page table","a. Shadow page table (Sai) → Đây là kỹ thuật do phần mềm quản lý, CPU không trực tiếp hỗ trợ.
 b. Extended page table (Đúng) → EPT là kỹ thuật được CPU hỗ trợ phần cứng (Intel VT-x) để ánh xạ physical → guest physical trong ảo hóa.
 c. Virtual PTBR (Sai) → Đây là cơ chế phần mềm để quản lý bảng trang ảo, không phải hỗ trợ phần cứng.
 d. Page table (Sai) → Bảng trang là cấu trúc quản lý bộ nhớ, nhưng việc ánh xạ từ guest → host trong ảo hóa không phải lúc nào cũng được phần cứng hỗ trợ; cần EPT hoặc shadow table."
