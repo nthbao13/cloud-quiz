@@ -420,10 +420,16 @@ function renderQuestion() {
     }
     
     const correctAnswers = parseCorrectAnswers(question.answer);
+    
+    // Check if this is an essay question first (no answer options but has answer)
+    const isEssayQuestion = answers.length === 0 && question.answer && question.answer.trim() !== '';
+    
     const isMultipleChoice = correctAnswers.length > 1;
     
-    // Add "(Multiple Choice)" label if applicable
-    if (isMultipleChoice) {
+    // Add labels
+    if (isEssayQuestion) {
+        questionTextOnly += '\n\n📝 Câu hỏi tự luận';
+    } else if (isMultipleChoice) {
         questionTextOnly += '\n\n(Multiple Choice - Chọn nhiều đáp án)';
     }
     
@@ -433,12 +439,33 @@ function renderQuestion() {
     answersContainer.innerHTML = '';
     
     if (answers.length === 0) {
-        // No answers found - show error message
-        const errorEl = document.createElement('div');
-        errorEl.className = 'answer-option disabled';
-        errorEl.textContent = 'Không tìm thấy đáp án cho câu hỏi này. Vui lòng kiểm tra dữ liệu.';
-        errorEl.style.color = 'var(--error-color)';
-        answersContainer.appendChild(errorEl);
+        // Check if this is an essay question (has answer but no options)
+        if (question.answer && question.answer.trim() !== '') {
+            // This is an essay question
+            const essayContainer = document.createElement('div');
+            essayContainer.className = 'essay-container';
+            
+            const essayLabel = document.createElement('p');
+            essayLabel.className = 'essay-label';
+            essayLabel.textContent = '📝 Câu hỏi tự luận - Nhập câu trả lời của bạn:';
+            
+            const essayTextarea = document.createElement('textarea');
+            essayTextarea.id = 'essayAnswer';
+            essayTextarea.className = 'essay-textarea';
+            essayTextarea.placeholder = 'Nhập câu trả lời của bạn ở đây...';
+            essayTextarea.rows = 8;
+            
+            essayContainer.appendChild(essayLabel);
+            essayContainer.appendChild(essayTextarea);
+            answersContainer.appendChild(essayContainer);
+        } else {
+            // No answers found - show error message
+            const errorEl = document.createElement('div');
+            errorEl.className = 'answer-option disabled';
+            errorEl.textContent = 'Không tìm thấy đáp án cho câu hỏi này. Vui lòng kiểm tra dữ liệu.';
+            errorEl.style.color = 'var(--error-color)';
+            answersContainer.appendChild(errorEl);
+        }
     } else {
         answers.forEach((answerObj, index) => {
             const answerEl = document.createElement('div');
@@ -485,7 +512,7 @@ function parseAnswers(questionText) {
         }
     }
     
-    // If no letter format found, check for True/False or other simple formats
+    // If no letter format found, check for special formats
     if (answers.length === 0) {
         const questionLower = questionText.toLowerCase();
         
@@ -502,6 +529,44 @@ function parseAnswers(questionText) {
             answers.push({ letter: 'a', text: 'Yes', fullText: 'Yes' });
             answers.push({ letter: 'b', text: 'No', fullText: 'No' });
         }
+        
+        // Check for Storage tiers format (Hot -, Cold -, Archive -)
+        const tierMatches = [];
+        for (const line of lines) {
+            const tierMatch = line.match(/^(Hot|Cold|Archive)\s*-\s*$/i);
+            if (tierMatch) {
+                const tier = tierMatch[1];
+                tierMatches.push(tier);
+            }
+        }
+        
+        if (tierMatches.length > 0) {
+            // This is a Storage tiers matching question
+            // Extract the scenarios (A, B, C)
+            const scenarios = [];
+            for (const line of lines) {
+                const scenarioMatch = line.match(/^([A-Z])\s*[–-]\s*(.+)/);
+                if (scenarioMatch) {
+                    scenarios.push({
+                        letter: scenarioMatch[1],
+                        text: scenarioMatch[2].trim()
+                    });
+                }
+            }
+            
+            // Create answer options: "Hot → scenario", "Cold → scenario", "Archive → scenario"
+            if (scenarios.length > 0) {
+                tierMatches.forEach((tier, idx) => {
+                    scenarios.forEach(scenario => {
+                        answers.push({
+                            letter: `${tier.toLowerCase()}-${scenario.letter.toLowerCase()}`,
+                            text: `${tier} → ${scenario.letter}`,
+                            fullText: `${tier} → ${scenario.letter}: ${scenario.text}`
+                        });
+                    });
+                });
+            }
+        }
     }
     
     return answers;
@@ -511,7 +576,23 @@ function parseAnswers(questionText) {
 function parseCorrectAnswers(answerText) {
     // Remove surrounding quotes if present
     answerText = answerText.replace(/^["']|["']$/g, '');
-    return answerText.split(',').map(a => a.trim().replace(/^["']|["']$/g, '')).filter(a => a);
+    
+    // Check if this looks like an essay answer (long text, not comma-separated options)
+    // Essay answers usually have multiple sentences with periods and newlines
+    if (answerText.length > 200 || answerText.includes('\n')) {
+        // This is likely an essay answer, return as single item
+        return [answerText];
+    }
+    
+    // For multiple choice, split by comma
+    const parts = answerText.split(',').map(a => a.trim().replace(/^["']|["']$/g, '')).filter(a => a);
+    
+    // If we get too many parts (>5), it's likely an essay split incorrectly
+    if (parts.length > 5) {
+        return [answerText];
+    }
+    
+    return parts;
 }
 
 // Check if an answer matches the correct answer
@@ -553,6 +634,30 @@ function selectAnswer(element, isMultipleChoice) {
 
 // Handle submit button
 async function handleSubmit() {
+    const question = currentQuiz[currentQuestionIndex];
+    
+    // Check if this is an essay question
+    const essayTextarea = document.getElementById('essayAnswer');
+    if (essayTextarea) {
+        const userAnswer = essayTextarea.value.trim();
+        
+        if (!userAnswer) {
+            alert('Vui lòng nhập câu trả lời của bạn!');
+            return;
+        }
+        
+        // Disable textarea
+        essayTextarea.disabled = true;
+        
+        // Evaluate essay answer with Gemini
+        await evaluateEssayAnswer(question, userAnswer);
+        
+        submitBtn.classList.add('hidden');
+        nextBtn.classList.remove('hidden');
+        return;
+    }
+    
+    // Normal multiple choice handling
     const selectedAnswers = Array.from(document.querySelectorAll('.answer-option.selected'));
     
     if (selectedAnswers.length === 0) {
@@ -560,7 +665,6 @@ async function handleSubmit() {
         return;
     }
     
-    const question = currentQuiz[currentQuestionIndex];
     const correctAnswers = parseCorrectAnswers(question.answer);
     const selectedTexts = selectedAnswers.map(el => el.dataset.answer);
     
@@ -620,6 +724,104 @@ async function handleSubmit() {
     nextBtn.classList.remove('hidden');
 }
 
+// Evaluate essay answer using Gemini AI
+async function evaluateEssayAnswer(question, userAnswer) {
+    explanationCard.classList.remove('hidden');
+    explanationText.textContent = 'Đang đánh giá câu trả lời của bạn...';
+    resultLabel.textContent = '⏳ Đang chấm bài...';
+    resultLabel.className = 'result-label';
+    
+    const apiKey = getUserApiKey();
+    
+    if (!apiKey) {
+        resultLabel.textContent = '⚠️ Cần API key';
+        resultLabel.className = 'result-label incorrect';
+        explanationText.textContent = 'Vui lòng cấu hình API key để sử dụng tính năng đánh giá tự luận. Click vào ⚙️ để thiết lập.';
+        return;
+    }
+    
+    try {
+        loadingOverlay.classList.remove('hidden');
+        
+        const prompt = `Bạn là một giáo viên đang chấm bài tự luận về Cloud Computing.
+
+Câu hỏi: ${question.question}
+
+Đáp án mẫu (tham khảo):
+${question.answer}
+
+Câu trả lời của học sinh:
+${userAnswer}
+
+Hãy đánh giá câu trả lời của học sinh theo các tiêu chí:
+1. Độ chính xác (so với đáp án mẫu)
+2. Tính đầy đủ
+3. Cách diễn đạt
+
+Trả lời theo format:
+**Đánh giá: [Xuất sắc/Tốt/Khá/Cần cải thiện]**
+
+**Nhận xét:**
+- [Điểm mạnh]
+- [Điểm cần cải thiện nếu có]
+
+**Gợi ý:**
+[Thông tin bổ sung hoặc góc nhìn khác]`;
+
+        const response = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                contents: [{
+                    parts: [{
+                        text: prompt
+                    }]
+                }]
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error('API request failed');
+        }
+        
+        const data = await response.json();
+        const evaluation = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Không thể đánh giá câu trả lời.';
+        
+        // Determine if it's a good answer based on evaluation
+        const evaluationLower = evaluation.toLowerCase();
+        let isGood = false;
+        if (evaluationLower.includes('xuất sắc') || evaluationLower.includes('tốt')) {
+            isGood = true;
+        }
+        
+        resultLabel.textContent = isGood ? '✓ Đánh giá tích cực!' : '○ Đã đánh giá';
+        resultLabel.className = 'result-label ' + (isGood ? 'correct' : 'incorrect');
+        explanationText.textContent = evaluation;
+        
+        // Store result (mark as correct for good answers)
+        userAnswers.push({
+            question: question,
+            selectedAnswers: [userAnswer],
+            isCorrect: isGood,
+            isEssay: true
+        });
+        
+        if (!isGood) {
+            wrongQuestions.push(question);
+        }
+        
+    } catch (error) {
+        console.error('Error evaluating essay:', error);
+        resultLabel.textContent = '✗ Lỗi đánh giá';
+        resultLabel.className = 'result-label incorrect';
+        explanationText.textContent = 'Không thể đánh giá câu trả lời. Vui lòng thử lại.';
+    } finally {
+        loadingOverlay.classList.add('hidden');
+    }
+}
+
 // Helper function to check if two answers match
 function answersMatch(answer1, answer2) {
     const a1 = answer1.toLowerCase().trim().replace(/['"]/g, '');
@@ -627,6 +829,26 @@ function answersMatch(answer1, answer2) {
     
     // Exact match
     if (a1 === a2) return true;
+    
+    // Check for Storage tiers matching format: "Hot → C"
+    if (a1.includes('→') || a2.includes('→')) {
+        // Extract just the mapping part (e.g., "Hot → C" from answer)
+        const extractMapping = (str) => {
+            const match = str.match(/(hot|cold|archive)\s*→\s*([a-c])/i);
+            if (match) {
+                return `${match[1].toLowerCase()} → ${match[2].toLowerCase()}`;
+            }
+            return str;
+        };
+        
+        const mapping1 = extractMapping(a1);
+        const mapping2 = extractMapping(a2);
+        
+        if (mapping1 === mapping2) return true;
+        
+        // Also check if answer2 contains this mapping (e.g., "Hot → C, Cold → B, Archive → A")
+        if (a2.includes(mapping1.replace(/\s/g, ''))) return true;
+    }
     
     // One contains the other (for cases where correct answer is more detailed)
     if (a1.includes(a2) || a2.includes(a1)) {
