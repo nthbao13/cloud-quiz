@@ -424,12 +424,20 @@ function renderQuestion() {
     // Check if this is an essay question first (no answer options but has answer)
     const isEssayQuestion = answers.length === 0 && question.answer && question.answer.trim() !== '';
     
-    const isMultipleChoice = correctAnswers.length > 1;
+    const isMultipleChoice = !isEssayQuestion && correctAnswers.length > 1;
+    
+    // Debug logging
+    console.log('Question render:', {
+        hasAnswers: answers.length,
+        correctAnswersCount: correctAnswers.length,
+        isEssay: isEssayQuestion,
+        isMultiple: isMultipleChoice
+    });
     
     // Add labels
     if (isEssayQuestion) {
         questionTextOnly += '\n\n📝 Câu hỏi tự luận';
-    } else if (isMultipleChoice) {
+    } else if (isMultipleChoice && answers.length > 0) {
         questionTextOnly += '\n\n(Multiple Choice - Chọn nhiều đáp án)';
     }
     
@@ -575,20 +583,37 @@ function parseAnswers(questionText) {
 // Parse correct answers - match against the text part only
 function parseCorrectAnswers(answerText) {
     // Remove surrounding quotes if present
+    const originalAnswer = answerText;
     answerText = answerText.replace(/^["']|["']$/g, '');
     
-    // Check if this looks like an essay answer (long text, not comma-separated options)
-    // Essay answers usually have multiple sentences with periods and newlines
-    if (answerText.length > 200 || answerText.includes('\n')) {
-        // This is likely an essay answer, return as single item
+    // Check if this looks like an essay answer
+    // Essay answers are LONG (>300 chars) with multiple complete sentences and colons/periods
+    const hasMultipleSentences = (answerText.match(/\./g) || []).length > 3;
+    const hasColons = answerText.includes(':');
+    const isVeryLong = answerText.length > 300;
+    
+    if (isVeryLong || (hasMultipleSentences && hasColons)) {
+        // This is likely an essay answer
+        console.log('Detected as essay:', { length: answerText.length, sentences: hasMultipleSentences, colons: hasColons });
         return [answerText];
     }
     
-    // For multiple choice, split by comma
-    const parts = answerText.split(',').map(a => a.trim().replace(/^["']|["']$/g, '')).filter(a => a);
+    // For multiple choice with newlines, replace newlines with commas first
+    answerText = answerText.replace(/\n/g, ',');
     
-    // If we get too many parts (>5), it's likely an essay split incorrectly
-    if (parts.length > 5) {
+    // Split by comma
+    const parts = answerText.split(',')
+        .map(a => a.trim()
+            .replace(/^["']|["']$/g, '')  // Remove quotes
+            .replace(/^-\s*/, '')  // Remove leading dash
+            .trim()
+        )
+        .filter(a => a);
+    
+    console.log('Parsed correct answers:', { original: originalAnswer.substring(0, 50), parts: parts.length, values: parts });
+    
+    // If we get too many parts (>6), it's likely an essay split incorrectly
+    if (parts.length > 6) {
         return [answerText];
     }
     
