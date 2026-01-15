@@ -693,27 +693,43 @@ async function handleSubmit() {
     const correctAnswers = parseCorrectAnswers(question.answer);
     const selectedTexts = selectedAnswers.map(el => el.dataset.answer);
     
+    console.log('Checking answer:', {
+        selected: selectedTexts,
+        correct: correctAnswers,
+        selectedCount: selectedTexts.length,
+        correctCount: correctAnswers.length
+    });
+    
     // Check if answer is correct by comparing with the correct answers
     let isCorrect = false;
     
     if (selectedTexts.length !== correctAnswers.length) {
+        console.log('Wrong count!');
         isCorrect = false;
     } else {
         // Check each selected answer matches a correct answer
         let matchCount = 0;
-        const allAnswersOptions = Array.from(document.querySelectorAll('.answer-option'));
         
         for (const selectedText of selectedTexts) {
+            let foundMatch = false;
             for (const correctAns of correctAnswers) {
                 if (answersMatch(selectedText, correctAns)) {
+                    console.log('Match found:', selectedText, '<=>', correctAns);
                     matchCount++;
+                    foundMatch = true;
                     break;
                 }
             }
+            if (!foundMatch) {
+                console.log('No match for:', selectedText);
+            }
         }
         
+        console.log('Match count:', matchCount, '/', correctAnswers.length);
         isCorrect = (matchCount === correctAnswers.length && matchCount === selectedTexts.length);
     }
+    
+    console.log('Final result:', isCorrect ? 'CORRECT' : 'INCORRECT');
     
     // Mark answers
     const allAnswersOptions = Array.from(document.querySelectorAll('.answer-option'));
