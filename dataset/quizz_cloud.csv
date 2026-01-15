@@ -845,7 +845,7 @@ d. Application gọi dịch vụ trong Guest OS (Đúng) → System call là cơ
 a. PCI-ISA Bridge
 b. Synchronous DMA
 c. Asynchronous DMA
-d. PCI-PCI Bridge",Synchronous DMA,
+d. PCI-PCI Bridge",Synchronous DMA
 ,"Metadata lưu trữ những thông tin nào
 a. Content
 b. Attributes
@@ -1019,7 +1019,8 @@ Quiz 8,,,
 a. Azure Log Analytics
 b. Azure Security Center
 c. Azure Monitor
-d. Azure Application Insights",Azure Log Analytics,
+d. Azure Application Insights
+",Azure Log Analytics,
 ,"Which Azure service can be integrated with Azure Load Balancer for automatic scaling based on traffic load?
 a. Azure Monitor
 b. Azure Autoscale
@@ -1050,7 +1051,8 @@ d. Files stored in Azure Blob Storage",Incoming network traffic,
 a. Data storage
 b. Distributing incoming network traffic across multiple servers
 c. Managing virtual machines
-d. Network monitoring",Distributing incoming network traffic across multiple servers,
+d. Network monitoring
+",Distributing incoming network traffic across multiple servers,
 ,"Các công việc cần thực hiện ảo hóa đường dữ liệu
 a. Virtual forwarding instance (VFI)
 b. Hop to cloud case
@@ -1065,12 +1067,14 @@ d. To define the backend servers that receive traffic",To define how incoming tr
 a. URL-based routing
 b. Cookie-based routing
 c. Round-robin routing
-d. Basic routing",URL-based routing,
+d. Basic routing
+",URL-based routing,
 ,"VLAN được ảo hóa ở lớp:
 a. 4
 b. 3
 c. 2
-d. 1",2,"a. 4 (Sai) → Layer 4 là Transport Layer, liên quan TCP/UDP, không phải VLAN.
+d. 1
+",2,"a. 4 (Sai) → Layer 4 là Transport Layer, liên quan TCP/UDP, không phải VLAN.
 b. 3 (Sai) → Layer 3 là Network Layer, xử lý IP routing, không trực tiếp ảo hóa VLAN.
 c. 2 (Đúng) → VLAN hoạt động ở Layer 2 (Data Link Layer), ảo hóa mạng LAN bằng cách tách các broadcast domain.
 d. 1 (Sai) → Layer 1 là Physical Layer, liên quan tới tín hiệu vật lý, không ảo hóa VLAN."
